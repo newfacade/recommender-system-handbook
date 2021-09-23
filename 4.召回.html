@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>召回 &#8212; 推荐系统手册</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="深度学习模型-基础" href="5.深度学习模型-基础.html" />
+    <link rel="prev" title="特征工程" href="3.特征工程.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/zhongli.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">推荐系统手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  深度学习推荐系统
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.基础架构.html">
+   基础架构
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.经典推荐模型.html">
+   经典推荐模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.特征工程.html">
+   特征工程
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   召回
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.深度学习模型-基础.html">
+   深度学习模型-基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6.深度学习模型-进阶.html">
+   深度学习模型-进阶
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
+   冷启动&amp;探索和利用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8.模型服务.html">
+   模型服务
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9.模型评估.html">
+   模型评估
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  spark
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1.intro.html">
+   Spark简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2.pyspark.html">
+   pyspark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/4.召回.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F4.召回.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/4.召回.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   召回层简介
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   单策略召回
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   多策略召回
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#embedding">
+   Embedding召回
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   局部敏感哈希
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>召回<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>召回层简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>如果你是一名快手的推荐工程师，你的任务是从500万候选视频中，为一名用户推荐10个他最感兴趣的，怎么做呢？</p>
+<p>最直接暴力的方法是，对这500万个短视频挨个打分、排序，取出得分最高的10个给用户。但是对于复杂模型，给500万个视频打分十分消耗计算资源，集群没法承受。</p>
+<p>在推荐物品候选集非常大的时候，我们首先需要快速准确地筛掉大部分不相关物品，节约排序时的计算资源，这就是召回层要解决的问题。</p>
+<p><img alt="jupyter" src="_images/recall1.jpeg" /></p>
+<p>召回层和排序层的特点</p>
+<p><img alt="jupyter" src="_images/recall2.jpeg" /></p>
+</div>
+<div class="section" id="id3">
+<h2>单策略召回<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>单策略召回指的是，通过制定一个规则或者利用一个简单模型来快速地召回可能的相关物品。</p>
+<p>比如说：如果用户对电影A的评分较高，那么我们就将与A风格相同的平均评分（像ces）较高的电影召回。</p>
+</div>
+<div class="section" id="id4">
+<h2>多策略召回<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>单策略召回虽然快，但是遗漏太多了，多路召回方法应运而生。</p>
+<p>多路召回：采用不同的策略或简单模型，分别召回一部分候选集，然后把候选集混合在一起供后续排序模型使用。</p>
+<p><img alt="jupyter" src="_images/recall3.jpeg" /></p>
+</div>
+<div class="section" id="embedding">
+<h2>Embedding召回<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
+<p>我们可以利用物品和用户Embedding的相似性来构建召回层。（就像矩阵分解）</p>
+<p>Embedding召回的优势：</p>
+<p>1.多路召回中的“兴趣标签”“热门度”“物品属性”等都可以作为Embedding方法中的附加信息，因此利用Embedding召回，就相当于考虑到了利用多种策略召回。</p>
+<p>2.Embedding召回标准唯一，多路召回中“兴趣标签”“热门度”不具有可比性，而Embedding召回使用向量相似度作为唯一标准。</p>
+<p>3.线上服务中，Embedding相似性的计算简单又直接。</p>
+</div>
+<div class="section" id="id5">
+<h2>局部敏感哈希<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>推荐系统中的“快速”Embedding最近邻搜索问题</p>
+<p>第一种方法是使用聚类，如k-means</p>
+<p><img alt="jupyter" src="_images/k-means.jpeg" /></p>
+<p>问题有：</p>
+<ol class="simple">
+<li><p>k选太大，离线训练会很慢</p></li>
+<li><p>k选太小，没减少多少搜索时间</p></li>
+<li><p>会遗漏边界情况</p></li>
+</ol>
+<p>第二种方法是使用索引，如建立一棵kd-tree（这里是平衡二叉树）</p>
+<p><img alt="jupyter" src="_images/kd.jpeg" /></p>
+<p>但是也会有边界问题，且生成和维护kd-tree的过程也相对复杂</p>
+<p>第三种方法是使用局部敏感哈希，它可以在常数时间内搜索Embedding的最近邻</p>
+<p>局部敏感哈希的基本思想是希望让相邻的点落入同一个“桶”，那么在最近邻搜索的时候只需在一个桶内或相邻的几个桶内搜索即可。那么如何构建“桶”呢？</p>
+<p>我们注意到，欧氏空间中，将高维空间的点映射到低维空间，原本接近的点在低维空间中肯定依然接近，但原本远离的点则有一定概率变成接近的点。</p>
+<p><img alt="jupyter" src="_images/hash1.jpeg" /></p>
+<p>对于embedding向量来说，由于我们大量使用内积操作来计算相似性，因此也可以使用内积操作来构建局部敏感哈希桶。</p>
+<p>假设 <span class="math notranslate nohighlight">\(v\)</span> 是 <span class="math notranslate nohighlight">\(k\)</span> 维的embedding向量，<span class="math notranslate nohighlight">\(x\)</span> 是随机生成的 <span class="math notranslate nohighlight">\(k\)</span> 维向量，那么我们可以利用内积操作将 <span class="math notranslate nohighlight">\(v\)</span> 映射到一维空间：</p>
+<div class="math notranslate nohighlight">
+\[h_{x}(v) = v\cdot{x}\]</div>
+<p>我们利用哈希函数 <span class="math notranslate nohighlight">\(h_{x}(v)\)</span> 来进行分桶，假设 <span class="math notranslate nohighlight">\(w\)</span> 是分桶宽度，那么：</p>
+<div class="math notranslate nohighlight">
+\[bucket_{x,w,b}(v) = \left[\frac{h_{x}(v) + b}{w}\right]\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(b\)</span> 是 <span class="math notranslate nohighlight">\(0\)</span> 到 <span class="math notranslate nohighlight">\(w\)</span> 间均匀分布的随机变量，<span class="math notranslate nohighlight">\(\left [  \right ]\)</span>是取整操作。</p>
+<p>多桶策略：</p>
+<p>如果我们仅采用一个哈希函数进行分桶，必然存在相似点误判的情况，因此我们可以采用 <span class="math notranslate nohighlight">\(m\)</span> 个哈希函数同时进行分桶。</p>
+<p>策略可以灵活选择，比如说使用3个分桶函数，把同时落入两个桶的点作为最近邻候选点。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="3.特征工程.html" title="previous page">特征工程</a>
+    <a class='right-next' id="next-link" href="5.深度学习模型-基础.html" title="next page">深度学习模型-基础</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By newfacade<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

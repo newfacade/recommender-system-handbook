@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型服务 &#8212; 推荐系统手册</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="模型评估" href="9.模型评估.html" />
+    <link rel="prev" title="冷启动&amp;探索和利用" href="7.冷启动&amp;探索和利用.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/zhongli.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">推荐系统手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  深度学习推荐系统
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.基础架构.html">
+   基础架构
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.经典推荐模型.html">
+   经典推荐模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.特征工程.html">
+   特征工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.召回.html">
+   召回
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.深度学习模型-基础.html">
+   深度学习模型-基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6.深度学习模型-进阶.html">
+   深度学习模型-进阶
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
+   冷启动&amp;探索和利用
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   模型服务
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9.模型评估.html">
+   模型评估
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  spark
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1.intro.html">
+   Spark简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2.pyspark.html">
+   pyspark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/8.模型服务.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F8.模型服务.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/8.模型服务.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#embedding">
+   预存推荐结果或者embedding结果
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   预训练embedding + 轻量级线上模型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pmml">
+   利用PMML转换和部署模型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tensorflow-serving">
+   Tensorflow Serving
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   搭建Tensorflow Serving服务
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docker">
+     安装Docker
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     建立Tensorflow Serving服务
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     请求Tensorflow Serving获得预估结果
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   线上特征处理
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>模型服务<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>在生产环境中，模型需要在线上运行，实时地根据用户请求生成模型的预估值。</p>
+<p>这个把模型部署在线上环境，并实时进行模型推断（Inference）的过程就是模型服务。</p>
+<p>业界主流的模型服务方法有4种，分别是预存推荐结果或者embedding结果、预训练embedding + 轻量级线上模型、PMML模型以及Tensorflow Serving。</p>
+<div class="section" id="embedding">
+<h2>预存推荐结果或者embedding结果<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
+<p>对推荐系统线上服务来说，最简单直接的线上模型服务方法就是在离线环境下生成对每个用户的推荐结果，然后将结果预存到以redis为代表的线上数据库中。这样，我们在线上直接取出预存给用户的结果就可以了。</p>
+<p>优点：</p>
+<p>无需事先模型线上推断，线上线下完全解耦，线上服务过程没有复杂的计算，延迟极低</p>
+<p>缺点：</p>
+<p>需存储 用户<span class="math notranslate nohighlight">\(\times\)</span>物品<span class="math notranslate nohighlight">\(\times\)</span>场景 组合推荐结果，可能组合爆炸无法存储；且无法引入线上场景类特征</p>
+</div>
+<div class="section" id="id2">
+<h2>预训练embedding + 轻量级线上模型<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>预存embedding然后进行相似度计算，这其实就类似于矩阵分解模型，缺点是太简单表达能力受限。</p>
+<p>因此可以用一个轻量级的线上模型代替相似度计算（如向量內积），即：</p>
+<p>1.用复杂深度学习网络离线生成embedding，存入redis等内存数据库。</p>
+<p>2.再在线上实现逻辑回归或者浅层神经网络等轻量级模型拟合目标</p>
+</div>
+<div class="section" id="pmml">
+<h2>利用PMML转换和部署模型<a class="headerlink" href="#pmml" title="Permalink to this headline">¶</a></h2>
+<p>虽然embedding + 轻量级模型的方法即实用又高效，但它还是把模型进行了割裂，让模型不完全是end2end这种最“完美”的方式。那有没有能够在离线训练完模型之后什么都不用做，直接部署模型的方式呢？PMML（预测模型标记语言 Predictive Model Markup Language）就可以。</p>
+<p><img alt="jupyter" src="_images/pmml.jpeg" /></p>
+<p>1.在离线训练好模型后，对模型序列化，生成PMML模型文件，存储到数据库或文件系统。</p>
+<p>2.在服务端，Server完成PMML模型的解析，生成预估模型，进行推断。</p>
+</div>
+<div class="section" id="tensorflow-serving">
+<h2>Tensorflow Serving<a class="headerlink" href="#tensorflow-serving" title="Permalink to this headline">¶</a></h2>
+<p>对于用Tensorflow实现的复杂的深度学习模型，PMML语言表示能力有限无法胜任，这是就需要Tensorflow Serving。</p>
+<p>Tenforflow Serving的工作流程和PMML类工具的流程一致：</p>
+<p>1.Tensorflow在离线把模型序列化，存储到文件系统。</p>
+<p>2.Tenforflow Serving把模型文件载入到模型服务器，还原模型推断过程，对外以HTTP接口等方式提供模型服务。</p>
+<p><img alt="jupyter" src="_images/serving.jpg" /></p>
+<p>上面是使用tenforflow.keras完成模型的构建和训练</p>
+<p>再利用Tensorflow Serving把模型文件载入到模型服务器，用Docker作为服务容器</p>
+<p>最后在jetty推荐服务器中发出HTTP请求到Tensorflow Serving，获得模型推断结果，推荐服务器利用这一结果完成推荐排序。</p>
+</div>
+<div class="section" id="id3">
+<h2>搭建Tensorflow Serving服务<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>总的来说，搭建服务分三步，分别是安装Docker，建立Tensorflow Serving服务，以及请求Tensorflow Serving获得预估结果。</p>
+<div class="section" id="docker">
+<h3>安装Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.docker.com/get-started">官网教程</a></p>
+<p>像安装软件一样安装即可。</p>
+</div>
+<div class="section" id="id4">
+<h3>建立Tensorflow Serving服务<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>首先利用Docker命令拉取Tensorflow Serving镜像：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 从docker仓库中下载tensorflow/serving镜像</span>
+<span class="n">docker</span> <span class="n">pull</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">serving</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>然后，再从Tensorflow的官方Github地址下载一个Tensorflow Serving相关的测试模型文件</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 把tensorflow/serving的测试代码clone到本地</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">serving</span>
+
+<span class="c1"># 指定测试数据的地址</span>
+<span class="n">TESTDATA</span><span class="o">=</span><span class="s2">&quot;$(pwd)/serving/tensorflow_serving/servables/tensorflow/testdata&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>最后，我们在Docker中启动一个包含Tensorflow Serving的模型服务容器，并载入我们刚才下载的测试模型文件half_plus_two</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 启动TensorFlow Serving容器，在8501端口运行模型服务API</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">t</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8501</span><span class="p">:</span><span class="mi">8501</span> \
+    <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;$TESTDATA/saved_model_half_plus_two_cpu:/models/half_plus_two&quot;</span> \
+    <span class="o">-</span><span class="n">e</span> <span class="n">MODEL_NAME</span><span class="o">=</span><span class="n">half_plus_two</span> \
+    <span class="n">tensorflow</span><span class="o">/</span><span class="n">serving</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>在命令执行完成后，若在Docker的管理界面中看到了Tensorflow Serving容器，就证明Tensorflow Serving服务被成功建立起来了</p>
+</div>
+<div class="section" id="id5">
+<h3>请求Tensorflow Serving获得预估结果<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>验证一下能否通过HTTP请求从Tensorflow Serving API中获得模型的预估结果。</p>
+<p>使用curl命令发送HTTP POST请求到Tensorflow Serving的地址：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 请求模型服务API</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;instances&quot;: [1.0, 2.0, 5.0]}&#39;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8501</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">half_plus_two</span><span class="p">:</span><span class="n">predict</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>若看到如下的返回结果，就说明Tensorflow Serving建立并预测成功</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 返回模型推断结果如下</span>
+<span class="c1"># Returns =&gt; { &quot;predictions&quot;: [2.5, 3.0, 4.5] }</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>在实践中，只需将测试模型更改为我们的推荐模型即可</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>线上特征处理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>要使用模型服务，比如说Tensorflow Serving，前提是我们需要根据当前的请求，生成模型可接收的输入。</p>
+<p>这个过程就是线上特征处理，它可能包括一些连续特征的归一化，分桶等，也包括请求数据库已存储的信息。</p>
+<p>具体来说，特征分为静态特征和动态特征。</p>
+<p>1.对于静态特征，比如说 id2embedding 的数据，基本长时间不会变更，这块直接从特征池（比如说Redis）里取。</p>
+<p>2.对于动态特征，我们需要再推荐服务器内部做一些必要的预处理，最后拼接起来，生成模型可接收的输入。</p>
+<p>这样把部分特征处理放到推荐服务器内而非模型里，可以减轻Tensorflow Serving的负担，降低延迟。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="7.冷启动&amp;探索和利用.html" title="previous page">冷启动&amp;探索和利用</a>
+    <a class='right-next' id="next-link" href="9.模型评估.html" title="next page">模型评估</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By newfacade<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

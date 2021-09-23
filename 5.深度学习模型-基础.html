@@ -1,0 +1,1014 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度学习模型-基础 &#8212; 推荐系统手册</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="深度学习模型-进阶" href="6.深度学习模型-进阶.html" />
+    <link rel="prev" title="召回" href="4.召回.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/zhongli.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">推荐系统手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   前言
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  深度学习推荐系统
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.基础架构.html">
+   基础架构
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.经典推荐模型.html">
+   经典推荐模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.特征工程.html">
+   特征工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.召回.html">
+   召回
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   深度学习模型-基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6.深度学习模型-进阶.html">
+   深度学习模型-进阶
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
+   冷启动&amp;探索和利用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8.模型服务.html">
+   模型服务
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9.模型评估.html">
+   模型评估
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  spark
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1.intro.html">
+   Spark简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2.pyspark.html">
+   pyspark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/5.深度学习模型-基础.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F5.深度学习模型-基础.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/5.深度学习模型-基础.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#embedding-mlp">
+   Embedding + MLP
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensorflow">
+     导入tensorflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     载入训练、测试数据
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     类别型特征处理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     数值型特征处理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     定义模型结构
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     定义模型训练相关的参数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     训练和评估
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wide-deep">
+   Wide&amp;Deep-即有记忆力，又有想象力
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neuralcf">
+   NeuralCF
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     双塔模型
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deepfm">
+   DeepFM-特征交叉
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>深度学习模型-基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="embedding-mlp">
+<h2>Embedding + MLP<a class="headerlink" href="#embedding-mlp" title="Permalink to this headline">¶</a></h2>
+<p>Embedding + MLP是最经典的深度学习推荐模型结构，也是后续诸多模型的基础。</p>
+<p>它就是在Embedding的基础上，加入多层神经网络（MLP）</p>
+<p>以2016年微软提出的Deep Crossing为例，进行说明</p>
+<p><img alt="jupyter" src="_images/mlp1.jpeg" /></p>
+<p>feature层：类别型特征如feature#1向上连接到Embedding层，而数值型特征如feature#2则直接连接到stacking层，因为数值型特征无维数过大和需捕捉相互间关系的问题。</p>
+<p>embedding层：是一个个全连接神经网络。</p>
+<p>stacking层：堆叠层，即将各个向量拼接（concatenate）在一起。</p>
+<p>MLP层：多层神经网络，这里使用了残差（residual）结构，不过这不重要，我们使用普通的mlp也可。</p>
+<p>scoring层：若是二分类问题，则使用sigmoid，若是多分类，则使用softmax。</p>
+<div class="section" id="tensorflow">
+<h3>导入tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>载入训练、测试数据<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Training samples path, change to your local path</span>
+<span class="n">training_samples_file_path</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s2">&quot;trainingSamples.csv&quot;</span><span class="p">,</span>
+                                                     <span class="s2">&quot;file:///Users/facer/IdeaProjects/SparrowRecSys/src/main&quot;</span>
+                                                     <span class="s2">&quot;/resources/webroot/sampledata/trainingSamples.csv&quot;</span><span class="p">)</span>
+<span class="c1"># Test samples path, change to your local path</span>
+<span class="n">test_samples_file_path</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s2">&quot;testSamples.csv&quot;</span><span class="p">,</span>
+                                                 <span class="s2">&quot;file:///Users/facer/IdeaProjects/SparrowRecSys/src/main&quot;</span>
+                                                 <span class="s2">&quot;/resources/webroot/sampledata/testSamples.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load sample as tf dataset</span>
+<span class="k">def</span> <span class="nf">get_dataset</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">make_csv_dataset</span><span class="p">(</span>
+        <span class="n">file_path</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">label_name</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span>
+        <span class="n">na_value</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="n">num_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split as test dataset and training dataset</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">get_dataset</span><span class="p">(</span><span class="n">training_samples_file_path</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">get_dataset</span><span class="p">(</span><span class="n">test_samples_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>类别型特征处理<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># genre features vocabulary</span>
+<span class="n">genre_vocab</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Film-Noir&#39;</span><span class="p">,</span> <span class="s1">&#39;Action&#39;</span><span class="p">,</span> <span class="s1">&#39;Adventure&#39;</span><span class="p">,</span> <span class="s1">&#39;Horror&#39;</span><span class="p">,</span> <span class="s1">&#39;Romance&#39;</span><span class="p">,</span> <span class="s1">&#39;War&#39;</span><span class="p">,</span> <span class="s1">&#39;Comedy&#39;</span><span class="p">,</span> <span class="s1">&#39;Western&#39;</span><span class="p">,</span> <span class="s1">&#39;Documentary&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;Sci-Fi&#39;</span><span class="p">,</span> <span class="s1">&#39;Drama&#39;</span><span class="p">,</span> <span class="s1">&#39;Thriller&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;Crime&#39;</span><span class="p">,</span> <span class="s1">&#39;Fantasy&#39;</span><span class="p">,</span> <span class="s1">&#39;Animation&#39;</span><span class="p">,</span> <span class="s1">&#39;IMAX&#39;</span><span class="p">,</span> <span class="s1">&#39;Mystery&#39;</span><span class="p">,</span> <span class="s1">&#39;Children&#39;</span><span class="p">,</span> <span class="s1">&#39;Musical&#39;</span><span class="p">]</span>
+
+<span class="n">GENRE_FEATURES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;userGenre1&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;userGenre2&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;userGenre3&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;userGenre4&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;userGenre5&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;movieGenre1&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;movieGenre2&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span><span class="p">,</span>
+    <span class="s1">&#39;movieGenre3&#39;</span><span class="p">:</span> <span class="n">genre_vocab</span>
+<span class="p">}</span>
+
+<span class="c1"># all categorical features</span>
+<span class="n">categorical_columns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">feature</span><span class="p">,</span> <span class="n">vocab</span> <span class="ow">in</span> <span class="n">GENRE_FEATURES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    先使用categorical_column_with_vocabulary_list把string型特征转化成one-hot向量</span>
+<span class="sd">    再使用embedding_column将one-hot向量embedding到10维</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cat_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">categorical_column_with_vocabulary_list</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="n">feature</span><span class="p">,</span> <span class="n">vocabulary_list</span><span class="o">=</span><span class="n">vocab</span><span class="p">)</span>
+    <span class="n">emb_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">embedding_column</span><span class="p">(</span><span class="n">cat_col</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">categorical_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">emb_col</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">把id转化成one-hot特征，不用词表，直接把id值对应的那个维度设为1</span>
+<span class="sd">num_buckets: Range of inputs and outputs is `[0, num_buckets)`</span>
+<span class="sd">If values &gt;= num_buckets will cause a failure while values &lt; 0 will be dropped.</span>
+<span class="sd">再使用embedding_column将one-hot向量embedding到10维</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># movie id embedding feature</span>
+<span class="n">movie_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">categorical_column_with_identity</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;movieId&#39;</span><span class="p">,</span> <span class="n">num_buckets</span><span class="o">=</span><span class="mi">1001</span><span class="p">)</span>
+<span class="n">movie_emb_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">embedding_column</span><span class="p">(</span><span class="n">movie_col</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">categorical_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_emb_col</span><span class="p">)</span>
+
+<span class="c1"># user id embedding feature</span>
+<span class="n">user_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">categorical_column_with_identity</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;userId&#39;</span><span class="p">,</span> <span class="n">num_buckets</span><span class="o">=</span><span class="mi">30001</span><span class="p">)</span>
+<span class="n">user_emb_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">embedding_column</span><span class="p">(</span><span class="n">user_col</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">categorical_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user_emb_col</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>数值型特征处理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># all numerical features</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">逐个声明为tf.feature_column.numeric_column就可以了</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">numerical_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;releaseYear&#39;</span><span class="p">),</span>
+                     <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;movieRatingCount&#39;</span><span class="p">),</span>
+                     <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;movieAvgRating&#39;</span><span class="p">),</span>
+                     <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;movieRatingStddev&#39;</span><span class="p">),</span>
+                     <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;userRatingCount&#39;</span><span class="p">),</span>
+                     <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;userAvgRating&#39;</span><span class="p">),</span>
+                     <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;userRatingStddev&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>定义模型结构<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># embedding + MLP model architecture</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">第一层为preprocess，即进行上面的类别型特征和数值型特征处理</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">numerical_columns</span> <span class="o">+</span> <span class="n">categorical_columns</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>定义模型训练相关的参数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compile the model, set loss function, optimizer and evaluation metrics</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;ROC&#39;</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;PR&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>训练和评估<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># evaluate the model</span>
+<span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Test Loss </span><span class="si">{}</span><span class="s1">, Test Accuracy </span><span class="si">{}</span><span class="s1">, Test ROC AUC </span><span class="si">{}</span><span class="s1">, Test PR AUC </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span>
+                                                                                   <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span><span class="p">))</span>
+
+<span class="c1"># print some predict results</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">goodRating</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">predictions</span><span class="p">[:</span><span class="mi">12</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][:</span><span class="mi">12</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted good rating: </span><span class="si">{:.2%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+          <span class="s2">&quot; | Actual rating label: &quot;</span><span class="p">,</span>
+          <span class="p">(</span><span class="s2">&quot;Good Rating&quot;</span> <span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="n">goodRating</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;Bad Rating&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/5
+WARNING:tensorflow:Layers in a Sequential model should only have a single input tensor, but we receive a &lt;class &#39;collections.OrderedDict&#39;&gt; input: OrderedDict([(&#39;movieId&#39;, &lt;tf.Tensor &#39;ExpandDims_4:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userId&#39;, &lt;tf.Tensor &#39;ExpandDims_17:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;rating&#39;, &lt;tf.Tensor &#39;ExpandDims_7:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;timestamp&#39;, &lt;tf.Tensor &#39;ExpandDims_9:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;releaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_8:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_1:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_2:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_3:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_5:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;movieRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_6:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatedMovie1&#39;, &lt;tf.Tensor &#39;ExpandDims_18:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie2&#39;, &lt;tf.Tensor &#39;ExpandDims_19:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie3&#39;, &lt;tf.Tensor &#39;ExpandDims_20:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie4&#39;, &lt;tf.Tensor &#39;ExpandDims_21:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie5&#39;, &lt;tf.Tensor &#39;ExpandDims_22:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_23:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userAvgReleaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_11:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userReleaseYearStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_25:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims_10:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_24:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_12:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_13:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_14:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre4&#39;, &lt;tf.Tensor &#39;ExpandDims_15:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre5&#39;, &lt;tf.Tensor &#39;ExpandDims_16:0&#39; shape=(None, 1) dtype=string&gt;)])
+Consider rewriting this model with the Functional API.
+WARNING:tensorflow:Layers in a Sequential model should only have a single input tensor, but we receive a &lt;class &#39;collections.OrderedDict&#39;&gt; input: OrderedDict([(&#39;movieId&#39;, &lt;tf.Tensor &#39;ExpandDims_4:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userId&#39;, &lt;tf.Tensor &#39;ExpandDims_17:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;rating&#39;, &lt;tf.Tensor &#39;ExpandDims_7:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;timestamp&#39;, &lt;tf.Tensor &#39;ExpandDims_9:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;releaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_8:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_1:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_2:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_3:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_5:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;movieRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_6:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatedMovie1&#39;, &lt;tf.Tensor &#39;ExpandDims_18:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie2&#39;, &lt;tf.Tensor &#39;ExpandDims_19:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie3&#39;, &lt;tf.Tensor &#39;ExpandDims_20:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie4&#39;, &lt;tf.Tensor &#39;ExpandDims_21:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie5&#39;, &lt;tf.Tensor &#39;ExpandDims_22:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_23:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userAvgReleaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_11:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userReleaseYearStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_25:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims_10:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_24:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_12:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_13:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_14:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre4&#39;, &lt;tf.Tensor &#39;ExpandDims_15:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre5&#39;, &lt;tf.Tensor &#39;ExpandDims_16:0&#39; shape=(None, 1) dtype=string&gt;)])
+Consider rewriting this model with the Functional API.
+7403/7403 [==============================] - 18s 2ms/step - loss: 6.3824 - accuracy: 0.5533 - auc: 0.5579 - auc_1: 0.6092
+Epoch 2/5
+7403/7403 [==============================] - 16s 2ms/step - loss: 0.7253 - accuracy: 0.6403 - auc: 0.6767 - auc_1: 0.7108
+Epoch 3/5
+7403/7403 [==============================] - 16s 2ms/step - loss: 0.5739 - accuracy: 0.7037 - auc: 0.7627 - auc_1: 0.7849
+Epoch 4/5
+7403/7403 [==============================] - 15s 2ms/step - loss: 0.5275 - accuracy: 0.7402 - auc: 0.8078 - auc_1: 0.8294
+Epoch 5/5
+7403/7403 [==============================] - 15s 2ms/step - loss: 0.5015 - accuracy: 0.7535 - auc: 0.8299 - auc_1: 0.8530
+WARNING:tensorflow:Layers in a Sequential model should only have a single input tensor, but we receive a &lt;class &#39;collections.OrderedDict&#39;&gt; input: OrderedDict([(&#39;movieId&#39;, &lt;tf.Tensor &#39;ExpandDims_4:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userId&#39;, &lt;tf.Tensor &#39;ExpandDims_17:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;rating&#39;, &lt;tf.Tensor &#39;ExpandDims_7:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;timestamp&#39;, &lt;tf.Tensor &#39;ExpandDims_9:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;releaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_8:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_1:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_2:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_3:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_5:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;movieRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_6:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatedMovie1&#39;, &lt;tf.Tensor &#39;ExpandDims_18:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie2&#39;, &lt;tf.Tensor &#39;ExpandDims_19:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie3&#39;, &lt;tf.Tensor &#39;ExpandDims_20:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie4&#39;, &lt;tf.Tensor &#39;ExpandDims_21:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie5&#39;, &lt;tf.Tensor &#39;ExpandDims_22:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_23:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userAvgReleaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_11:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userReleaseYearStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_25:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims_10:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_24:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_12:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_13:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_14:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre4&#39;, &lt;tf.Tensor &#39;ExpandDims_15:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre5&#39;, &lt;tf.Tensor &#39;ExpandDims_16:0&#39; shape=(None, 1) dtype=string&gt;)])
+Consider rewriting this model with the Functional API.
+1870/1870 [==============================] - 3s 1ms/step - loss: 0.6018 - accuracy: 0.6903 - auc: 0.7501 - auc_1: 0.7774
+
+
+Test Loss 0.6017833352088928, Test Accuracy 0.6902852058410645, Test ROC AUC 0.7501192092895508, Test PR AUC 0.7773768305778503
+WARNING:tensorflow:Layers in a Sequential model should only have a single input tensor, but we receive a &lt;class &#39;collections.OrderedDict&#39;&gt; input: OrderedDict([(&#39;movieId&#39;, &lt;tf.Tensor &#39;ExpandDims_4:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userId&#39;, &lt;tf.Tensor &#39;ExpandDims_17:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;rating&#39;, &lt;tf.Tensor &#39;ExpandDims_7:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;timestamp&#39;, &lt;tf.Tensor &#39;ExpandDims_9:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;releaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_8:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_1:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_2:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_3:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;movieRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_5:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;movieAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;movieRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_6:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatedMovie1&#39;, &lt;tf.Tensor &#39;ExpandDims_18:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie2&#39;, &lt;tf.Tensor &#39;ExpandDims_19:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie3&#39;, &lt;tf.Tensor &#39;ExpandDims_20:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie4&#39;, &lt;tf.Tensor &#39;ExpandDims_21:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatedMovie5&#39;, &lt;tf.Tensor &#39;ExpandDims_22:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userRatingCount&#39;, &lt;tf.Tensor &#39;ExpandDims_23:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userAvgReleaseYear&#39;, &lt;tf.Tensor &#39;ExpandDims_11:0&#39; shape=(None, 1) dtype=int32&gt;), (&#39;userReleaseYearStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_25:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userAvgRating&#39;, &lt;tf.Tensor &#39;ExpandDims_10:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userRatingStddev&#39;, &lt;tf.Tensor &#39;ExpandDims_24:0&#39; shape=(None, 1) dtype=float32&gt;), (&#39;userGenre1&#39;, &lt;tf.Tensor &#39;ExpandDims_12:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre2&#39;, &lt;tf.Tensor &#39;ExpandDims_13:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre3&#39;, &lt;tf.Tensor &#39;ExpandDims_14:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre4&#39;, &lt;tf.Tensor &#39;ExpandDims_15:0&#39; shape=(None, 1) dtype=string&gt;), (&#39;userGenre5&#39;, &lt;tf.Tensor &#39;ExpandDims_16:0&#39; shape=(None, 1) dtype=string&gt;)])
+Consider rewriting this model with the Functional API.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicted good rating: 65.24%  | Actual rating label:  Good Rating
+Predicted good rating: 72.90%  | Actual rating label:  Bad Rating
+Predicted good rating: 50.26%  | Actual rating label:  Good Rating
+Predicted good rating: 57.03%  | Actual rating label:  Good Rating
+Predicted good rating: 59.85%  | Actual rating label:  Good Rating
+Predicted good rating: 34.43%  | Actual rating label:  Good Rating
+Predicted good rating: 54.94%  | Actual rating label:  Good Rating
+Predicted good rating: 76.91%  | Actual rating label:  Bad Rating
+Predicted good rating: 14.62%  | Actual rating label:  Good Rating
+Predicted good rating: 72.92%  | Actual rating label:  Bad Rating
+Predicted good rating: 25.21%  | Actual rating label:  Good Rating
+Predicted good rating: 95.21%  | Actual rating label:  Good Rating
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wide-deep">
+<h2>Wide&amp;Deep-即有记忆力，又有想象力<a class="headerlink" href="#wide-deep" title="Permalink to this headline">¶</a></h2>
+<p><img alt="jupyter" src="_images/wide1.jpg" /></p>
+<p>由google提出，左侧是wide部分，右侧是deep部分。</p>
+<p>wide部分：直接把输入层连接到输出层，作用是让模型有较强的记忆力。</p>
+<p>deep部分：典型的embedding + mlp结构，作用是让模型有较强的泛化能力（想象力）。</p>
+<p>所谓“记忆能力”，即模型直接学习物品或特征的“共现频率”，并把他们直接作为推荐依据。比如说喜欢A电影的也喜欢B这个规则。</p>
+<p>这类规则有两个特点：1.数量非常多；2.非常具体，没必要和其他特征交叉。</p>
+<p>这样我们的Wide&amp;Deep模型就能同时拥有记忆力和想象力。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">inputs分别输入wide、deep</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># define input for keras model</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;movieAvgRating&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieAvgRating&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;movieRatingStddev&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieRatingStddev&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;movieRatingCount&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieRatingCount&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userAvgRating&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userAvgRating&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userRatingStddev&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userRatingStddev&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userRatingCount&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userRatingCount&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;releaseYear&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;releaseYear&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+
+    <span class="s1">&#39;movieId&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieId&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userId&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userId&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userRatedMovie1&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userRatedMovie1&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+
+    <span class="s1">&#39;userGenre1&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userGenre1&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userGenre2&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userGenre2&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userGenre3&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userGenre3&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userGenre4&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userGenre4&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;userGenre5&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;userGenre5&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;movieGenre1&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieGenre1&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;movieGenre2&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieGenre2&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;movieGenre3&#39;</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;movieGenre3&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">要在embedding+mlp的基础上，加上wide部分</span>
+<span class="sd">首先定义输入wide部分的交叉特征</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">rated_movie</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">categorical_column_with_identity</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;userRatedMovie1&#39;</span><span class="p">,</span>
+                                                                 <span class="n">num_buckets</span><span class="o">=</span><span class="mi">1001</span><span class="p">)</span>
+<span class="n">crossed_feature</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">indicator_column</span><span class="p">(</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">crossed_column</span><span class="p">([</span><span class="n">movie_col</span><span class="p">,</span> <span class="n">rated_movie</span><span class="p">],</span> <span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">定义模型</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># wide and deep model architecture</span>
+<span class="c1"># deep part for all input features</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">numerical_columns</span> <span class="o">+</span> <span class="n">categorical_columns</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">deep</span><span class="p">)</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">deep</span><span class="p">)</span>
+
+<span class="c1"># wide part for cross feature</span>
+<span class="n">wide</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">crossed_feature</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="n">both</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">deep</span><span class="p">,</span> <span class="n">wide</span><span class="p">])</span>
+<span class="n">output_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">both</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">output_layer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compile the model, set loss function, optimizer and evaluation metrics</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;ROC&#39;</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;PR&#39;</span><span class="p">)])</span>
+
+<span class="c1"># train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># evaluate the model</span>
+<span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Test Loss </span><span class="si">{}</span><span class="s1">, Test Accuracy </span><span class="si">{}</span><span class="s1">, Test ROC AUC </span><span class="si">{}</span><span class="s1">, Test PR AUC </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span>
+                                                                                   <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/facer/opt/anaconda3/lib/python3.8/site-packages/tensorflow/python/keras/engine/functional.py:592: UserWarning: Input dict contained keys [&#39;rating&#39;, &#39;timestamp&#39;, &#39;userRatedMovie2&#39;, &#39;userRatedMovie3&#39;, &#39;userRatedMovie4&#39;, &#39;userRatedMovie5&#39;, &#39;userAvgReleaseYear&#39;, &#39;userReleaseYearStddev&#39;] which did not match any model input. They will be ignored by the model.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7403/7403 [==============================] - 21s 2ms/step - loss: 1.1734 - accuracy: 0.5684 - auc_2: 0.5791 - auc_3: 0.6307
+Epoch 2/5
+7403/7403 [==============================] - 18s 2ms/step - loss: 0.6118 - accuracy: 0.6700 - auc_2: 0.7212 - auc_3: 0.7499
+Epoch 3/5
+7403/7403 [==============================] - 18s 2ms/step - loss: 0.5585 - accuracy: 0.7169 - auc_2: 0.7803 - auc_3: 0.7991
+Epoch 4/5
+7403/7403 [==============================] - 19s 3ms/step - loss: 0.5105 - accuracy: 0.7506 - auc_2: 0.8227 - auc_3: 0.8446
+Epoch 5/5
+7403/7403 [==============================] - 16s 2ms/step - loss: 0.4847 - accuracy: 0.7672 - auc_2: 0.8433 - auc_3: 0.8652
+1870/1870 [==============================] - 3s 1ms/step - loss: 0.6047 - accuracy: 0.6885 - auc_2: 0.7459 - auc_3: 0.7742
+
+
+Test Loss 0.6047403812408447, Test Accuracy 0.6885026693344116, Test ROC AUC 0.7458506226539612, Test PR AUC 0.7742313146591187
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="neuralcf">
+<h2>NeuralCF<a class="headerlink" href="#neuralcf" title="Permalink to this headline">¶</a></h2>
+<p>使用神经网络(neural network)改进协同过滤-矩阵分解（collaborative filtering）算法就得到了NeuralCF。</p>
+<p>如果将矩阵分解解释成神经网络，它的结构将如同下图：</p>
+<p><img alt="jupyter" src="_images/ncf1.jpg" /></p>
+<p>输入层：用户id和物品id组成的one-hot向量。</p>
+<p>第二层也可称之为Embedding层：把one-hot向量转化成稠密的Embedding向量表达，这部分就是矩阵分解中的用户隐向量和物品隐向量。</p>
+<p>输出层：以用户隐向量和物品隐向量和内积作为最终的预测得分。</p>
+<p>但是它有一个薄弱环节，那就是Embedding层之上直接算內积过于简单，拟合能力不足。</p>
+<p>因此我们可以使用一个多层神经网络代替內积操作，这就是NeuralCF模型：</p>
+<p><img alt="jupyter" src="_images/ncf2.jpg" /></p>
+<div class="section" id="id8">
+<h3>双塔模型<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>NeuralCF的模型结构中，蕴含了一个非常有价值的思想，就是我们可以把模型分为用户侧模型和物品侧模型两个部分，然后用互操作层把这两部分联合起来，产生最后的得分。</p>
+<p>这里用户侧和物品侧模型结构，可以是简单的Embedding层，也可以是复杂的神经网络。</p>
+<p>互操作层可以是简单的点积操作，也可以是比较复杂的MLP结构。</p>
+<p>这种用户侧模型 + 物品侧模型 + 互操作层的结构，统称为“双塔模型结构”。</p>
+<p><img alt="jupyter" src="_images/ncf3.jpg" /></p>
+<p>上面是一个复杂用户侧和物品侧模型 + 简单互操作层的双塔模型。</p>
+<p>双塔模型具有易上线，易服务的优势。</p>
+<p>使用双塔模型，我们可以不用把整个模型部署上线，只需预存用户塔和物品塔的输出（比如说预存到redis），即用户Embedding和物品Embedding，线上只用实现互操作层，又快又简单。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># neural cf model arch two. only embedding in each tower, then MLP as the interaction layers</span>
+<span class="k">def</span> <span class="nf">neural_cf_model</span><span class="p">(</span><span class="n">feature_inputs</span><span class="p">,</span> <span class="n">item_feature_columns</span><span class="p">,</span> <span class="n">user_feature_columns</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">):</span>
+    <span class="n">item_tower</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">item_feature_columns</span><span class="p">)(</span><span class="n">feature_inputs</span><span class="p">)</span>
+    <span class="n">user_tower</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">user_feature_columns</span><span class="p">)(</span><span class="n">feature_inputs</span><span class="p">)</span>
+    <span class="n">interact_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">item_tower</span><span class="p">,</span> <span class="n">user_tower</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">num_nodes</span> <span class="ow">in</span> <span class="n">hidden_units</span><span class="p">:</span>
+        <span class="n">interact_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_nodes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">interact_layer</span><span class="p">)</span>
+    <span class="n">output_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">interact_layer</span><span class="p">)</span>
+    <span class="n">neural_cf_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">feature_inputs</span><span class="p">,</span> <span class="n">output_layer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">neural_cf_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">neural_cf_model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="p">[</span><span class="n">movie_emb_col</span><span class="p">],</span> <span class="p">[</span><span class="n">user_emb_col</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compile the model, set loss function, optimizer and evaluation metrics</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;ROC&#39;</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;PR&#39;</span><span class="p">)])</span>
+
+<span class="c1"># train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># evaluate the model</span>
+<span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Test Loss </span><span class="si">{}</span><span class="s1">, Test Accuracy </span><span class="si">{}</span><span class="s1">, Test ROC AUC </span><span class="si">{}</span><span class="s1">, Test PR AUC </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span>
+                                                                                   <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/5
+7403/7403 [==============================] - 15s 2ms/step - loss: 0.6461 - accuracy: 0.6099 - auc_4: 0.6443 - auc_5: 0.6960
+Epoch 2/5
+7403/7403 [==============================] - 13s 2ms/step - loss: 0.5728 - accuracy: 0.7052 - auc_4: 0.7643 - auc_5: 0.7944
+Epoch 3/5
+7403/7403 [==============================] - 12s 2ms/step - loss: 0.5208 - accuracy: 0.7436 - auc_4: 0.8142 - auc_5: 0.8414
+Epoch 4/5
+7403/7403 [==============================] - 12s 2ms/step - loss: 0.4763 - accuracy: 0.7733 - auc_4: 0.8494 - auc_5: 0.8751
+Epoch 5/5
+7403/7403 [==============================] - 12s 2ms/step - loss: 0.4364 - accuracy: 0.7998 - auc_4: 0.8765 - auc_5: 0.8989
+1870/1870 [==============================] - 2s 962us/step - loss: 0.6768 - accuracy: 0.6713 - auc_4: 0.7233 - auc_5: 0.7480
+
+
+Test Loss 0.6768426299095154, Test Accuracy 0.6712566614151001, Test ROC AUC 0.7232696413993835, Test PR AUC 0.7479643821716309
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="deepfm">
+<h2>DeepFM-特征交叉<a class="headerlink" href="#deepfm" title="Permalink to this headline">¶</a></h2>
+<p>Emebedding+MLP，Wide&amp;Deep，NeuralCF都没有对特征交叉进行特别的处理，只能硬train，这样抓取交叉特征的效率不高。</p>
+<p>在前深度学习时代，因子分解机（Factorization Machine）非常善于处理特征交叉：</p>
+<p><img alt="jupyter" src="_images/fm.jpg" /></p>
+<p>线性模型：</p>
+<div class="math notranslate nohighlight">
+\[y = b + \sum_{i=1}^{n}\omega_{i}x_{i}\]</div>
+<p>引入二阶交叉项，得到二阶多项式模型：</p>
+<div class="math notranslate nohighlight">
+\[y = b + \sum_{i=1}^{n}\omega_{i}x_{i} + \sum_{i=1}^{n}\sum_{j=i+1}^{n}\omega_{ij}x_{i}x_{j}\]</div>
+<p>若直接使用二阶多项式建模，组合部分有<span class="math notranslate nohighlight">\(\frac{n(n-1)}{2}\)</span>个参数，很难训练。</p>
+<p>因此我们采用类似矩阵分解的技术，<span class="math notranslate nohighlight">\(W \approx \hat{W} = VV^{T}\)</span>，其中<span class="math notranslate nohighlight">\(V \in \mathbb{R}^{n\times{k}}\)</span>，k一般较小。</p>
+<div class="math notranslate nohighlight">
+\[y = b + \sum_{i=1}^{n}\omega_{i}x_{i} + \sum_{i=1}^{n}\sum_{j=i+1}^{n}\left \langle{v_{i},v_{j}}
+\right \rangle x_{i}x_{j}\]</div>
+<p>二阶参数只有 <span class="math notranslate nohighlight">\(nk\)</span> 个，较易训练。</p>
+<p>DeepFM以FM为Wide部分，Deep部分则是一个Embedding + MLP。</p>
+<p><img alt="jupyter" src="_images/deepfm.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">1阶特征</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">movie_ind_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">indicator_column</span><span class="p">(</span><span class="n">movie_col</span><span class="p">)</span> <span class="c1"># movid id indicator columns</span>
+
+<span class="n">user_ind_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">indicator_column</span><span class="p">(</span><span class="n">user_col</span><span class="p">)</span> <span class="c1"># user id indicator columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">类型特征</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># genre features vocabulary</span>
+<span class="n">genre_vocab</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Film-Noir&#39;</span><span class="p">,</span> <span class="s1">&#39;Action&#39;</span><span class="p">,</span> <span class="s1">&#39;Adventure&#39;</span><span class="p">,</span> <span class="s1">&#39;Horror&#39;</span><span class="p">,</span> <span class="s1">&#39;Romance&#39;</span><span class="p">,</span> <span class="s1">&#39;War&#39;</span><span class="p">,</span> <span class="s1">&#39;Comedy&#39;</span><span class="p">,</span> <span class="s1">&#39;Western&#39;</span><span class="p">,</span> <span class="s1">&#39;Documentary&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;Sci-Fi&#39;</span><span class="p">,</span> <span class="s1">&#39;Drama&#39;</span><span class="p">,</span> <span class="s1">&#39;Thriller&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;Crime&#39;</span><span class="p">,</span> <span class="s1">&#39;Fantasy&#39;</span><span class="p">,</span> <span class="s1">&#39;Animation&#39;</span><span class="p">,</span> <span class="s1">&#39;IMAX&#39;</span><span class="p">,</span> <span class="s1">&#39;Mystery&#39;</span><span class="p">,</span> <span class="s1">&#39;Children&#39;</span><span class="p">,</span> <span class="s1">&#39;Musical&#39;</span><span class="p">]</span>
+<span class="c1"># user genre embedding feature</span>
+<span class="n">user_genre_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">categorical_column_with_vocabulary_list</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;userGenre1&quot;</span><span class="p">,</span>
+                                                                           <span class="n">vocabulary_list</span><span class="o">=</span><span class="n">genre_vocab</span><span class="p">)</span>
+<span class="n">user_genre_emb_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">embedding_column</span><span class="p">(</span><span class="n">user_genre_col</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">user_genre_ind_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">indicator_column</span><span class="p">(</span><span class="n">user_genre_col</span><span class="p">)</span> <span class="c1"># user genre indicator columns</span>
+<span class="c1"># item genre embedding feature</span>
+<span class="n">item_genre_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">categorical_column_with_vocabulary_list</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;movieGenre1&quot;</span><span class="p">,</span>
+                                                                           <span class="n">vocabulary_list</span><span class="o">=</span><span class="n">genre_vocab</span><span class="p">)</span>
+<span class="n">item_genre_emb_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">embedding_column</span><span class="p">(</span><span class="n">item_genre_col</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">item_genre_ind_col</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">indicator_column</span><span class="p">(</span><span class="n">item_genre_col</span><span class="p">)</span> <span class="c1"># item genre indicator columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">deep部分特征</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">deep_feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;releaseYear&#39;</span><span class="p">),</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;movieRatingCount&#39;</span><span class="p">),</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;movieAvgRating&#39;</span><span class="p">),</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;movieRatingStddev&#39;</span><span class="p">),</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;userRatingCount&#39;</span><span class="p">),</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;userAvgRating&#39;</span><span class="p">),</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">feature_column</span><span class="o">.</span><span class="n">numeric_column</span><span class="p">(</span><span class="s1">&#39;userRatingStddev&#39;</span><span class="p">),</span>
+                        <span class="n">movie_emb_col</span><span class="p">,</span>
+                        <span class="n">user_emb_col</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">1阶layer</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># fm first-order term columns: without embedding and concatenate to the output layer directly</span>
+<span class="n">fm_first_order_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">movie_ind_col</span><span class="p">,</span> <span class="n">user_ind_col</span><span class="p">,</span> <span class="n">user_genre_ind_col</span><span class="p">,</span> <span class="n">item_genre_ind_col</span><span class="p">]</span>
+
+<span class="c1"># The first-order term in the FM layer</span>
+<span class="n">fm_first_order_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">fm_first_order_columns</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">embedding layers</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">item_emb_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">([</span><span class="n">movie_emb_col</span><span class="p">])(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">user_emb_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">([</span><span class="n">user_emb_col</span><span class="p">])(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">item_genre_emb_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">([</span><span class="n">item_genre_emb_col</span><span class="p">])(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">user_genre_emb_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">([</span><span class="n">user_genre_emb_col</span><span class="p">])(</span><span class="n">inputs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">cross layer</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># FM part, cross different categorical feature embeddings</span>
+<span class="n">product_layer_item_user</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)([</span><span class="n">item_emb_layer</span><span class="p">,</span> <span class="n">user_emb_layer</span><span class="p">])</span>
+<span class="n">product_layer_item_genre_user_genre</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)([</span><span class="n">item_genre_emb_layer</span><span class="p">,</span> <span class="n">user_genre_emb_layer</span><span class="p">])</span>
+<span class="n">product_layer_item_genre_user</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)([</span><span class="n">item_genre_emb_layer</span><span class="p">,</span> <span class="n">user_emb_layer</span><span class="p">])</span>
+<span class="n">product_layer_user_genre_item</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)([</span><span class="n">item_emb_layer</span><span class="p">,</span> <span class="n">user_genre_emb_layer</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># deep part, MLP to generalize all input features</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">DenseFeatures</span><span class="p">(</span><span class="n">deep_feature_columns</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">deep</span><span class="p">)</span>
+<span class="n">deep</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">deep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenate fm part and deep part</span>
+<span class="n">concat_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">fm_first_order_layer</span><span class="p">,</span> <span class="n">product_layer_item_user</span><span class="p">,</span> <span class="n">product_layer_item_genre_user_genre</span><span class="p">,</span>
+                                            <span class="n">product_layer_item_genre_user</span><span class="p">,</span> <span class="n">product_layer_user_genre_item</span><span class="p">,</span> <span class="n">deep</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">output_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">concat_layer</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">output_layer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compile the model, set loss function, optimizer and evaluation metrics</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;ROC&#39;</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">AUC</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;PR&#39;</span><span class="p">)])</span>
+
+<span class="c1"># train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># evaluate the model</span>
+<span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Test Loss </span><span class="si">{}</span><span class="s1">, Test Accuracy </span><span class="si">{}</span><span class="s1">, Test ROC AUC </span><span class="si">{}</span><span class="s1">, Test PR AUC </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span>
+                                                                                   <span class="n">test_roc_auc</span><span class="p">,</span> <span class="n">test_pr_auc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/5
+7403/7403 [==============================] - 31s 4ms/step - loss: 0.7258 - accuracy: 0.6150 - auc_6: 0.6450 - auc_7: 0.6824
+Epoch 2/5
+7403/7403 [==============================] - 30s 4ms/step - loss: 0.5664 - accuracy: 0.7101 - auc_6: 0.7727 - auc_7: 0.8013
+Epoch 3/5
+7403/7403 [==============================] - 27s 4ms/step - loss: 0.5003 - accuracy: 0.7577 - auc_6: 0.8328 - auc_7: 0.8577
+Epoch 4/5
+7403/7403 [==============================] - 27s 4ms/step - loss: 0.4374 - accuracy: 0.7980 - auc_6: 0.8770 - auc_7: 0.8977
+Epoch 5/5
+7403/7403 [==============================] - 27s 4ms/step - loss: 0.3865 - accuracy: 0.8255 - auc_6: 0.9054 - auc_7: 0.9236
+1870/1870 [==============================] - 3s 1ms/step - loss: 0.7383 - accuracy: 0.6537 - auc_6: 0.6987 - auc_7: 0.7276
+
+
+Test Loss 0.7382702231407166, Test Accuracy 0.653743326663971, Test ROC AUC 0.6986628174781799, Test PR AUC 0.72762531042099
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="4.召回.html" title="previous page">召回</a>
+    <a class='right-next' id="next-link" href="6.深度学习模型-进阶.html" title="next page">深度学习模型-进阶</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By newfacade<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
