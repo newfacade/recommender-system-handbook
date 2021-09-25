@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="深度学习模型-基础" href="5.深度学习模型-基础.html" />
+    <link rel="next" title="排序模型" href="chapter05/0.html" />
     <link rel="prev" title="特征工程" href="3.特征工程.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -118,19 +118,51 @@
    召回
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5.深度学习模型-基础.html">
-   深度学习模型-基础
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter05/0.html">
+   排序模型
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/1.movielens.html">
+     MovieLens数据集
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/2.mlp.html">
+     Embedding + MLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/3.wide and deep.html">
+     Wide and Deep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/6.din.html">
+     DIN
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6.深度学习模型-进阶.html">
-   深度学习模型-进阶
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
-   冷启动&amp;探索和利用
+  <a class="reference internal" href="7.冷启动.html">
+   冷启动
   </a>
  </li>
  <li class="toctree-l1">
@@ -151,14 +183,46 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="a1.intro.html">
-   Spark简介
+  <a class="reference internal" href="10.intro.html">
+   Spark的特质
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="a2.pyspark.html">
-   pyspark
+  <a class="reference internal" href="11.install.html">
+   安装Spark
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter12/0.html">
+   Spark SQL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/1.first app.html">
+     第一个应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/2.schema.html">
+     Schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/3.col and row.html">
+     DataFrame的列与行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/4.basic operations.html">
+     DataFrame基本操作
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -314,7 +378,7 @@
 <div class="section" id="id3">
 <h2>单策略召回<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>单策略召回指的是，通过制定一个规则或者利用一个简单模型来快速地召回可能的相关物品。</p>
-<p>比如说：如果用户对电影A的评分较高，那么我们就将与A风格相同的平均评分（像ces）较高的电影召回。</p>
+<p>比如说：如果用户对电影A的评分较高，那么我们就将与A风格相同的平均评分较高的电影召回。</p>
 </div>
 <div class="section" id="id4">
 <h2>多策略召回<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -388,7 +452,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="3.特征工程.html" title="previous page">特征工程</a>
-    <a class='right-next' id="next-link" href="5.深度学习模型-基础.html" title="next page">深度学习模型-基础</a>
+    <a class='right-next' id="next-link" href="chapter05/0.html" title="next page">排序模型</a>
 
         </div>
         

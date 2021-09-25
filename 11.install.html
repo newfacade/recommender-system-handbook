@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pyspark &#8212; 推荐系统手册</title>
+    <title>安装Spark &#8212; 推荐系统手册</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Spark简介" href="a1.intro.html" />
+    <link rel="next" title="Spark SQL" href="chapter12/0.html" />
+    <link rel="prev" title="Spark的特质" href="10.intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -117,19 +118,51 @@
    召回
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5.深度学习模型-基础.html">
-   深度学习模型-基础
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter05/0.html">
+   排序模型
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/1.movielens.html">
+     MovieLens数据集
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/2.mlp.html">
+     Embedding + MLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/3.wide and deep.html">
+     Wide and Deep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/6.din.html">
+     DIN
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6.深度学习模型-进阶.html">
-   深度学习模型-进阶
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
-   冷启动&amp;探索和利用
+  <a class="reference internal" href="7.冷启动.html">
+   冷启动
   </a>
  </li>
  <li class="toctree-l1">
@@ -150,14 +183,46 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="a1.intro.html">
-   Spark简介
+  <a class="reference internal" href="10.intro.html">
+   Spark的特质
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   pyspark
+   安装Spark
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter12/0.html">
+   Spark SQL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/1.first app.html">
+     第一个应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/2.schema.html">
+     Schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/3.col and row.html">
+     DataFrame的列与行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/4.basic operations.html">
+     DataFrame基本操作
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -200,7 +265,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/a2.pyspark.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/11.install.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -220,7 +285,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fa2.pyspark.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F11.install.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -241,7 +306,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/a2.pyspark.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/11.install.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -264,19 +329,31 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#pyspark">
    安装pyspark
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id1">
    验证安装
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   第一个应用
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     在命令行输入pyspark
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     查看spark版本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readme-md">
+     读取README.md，看它一共有多少行
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -289,28 +366,26 @@
         
               <div>
                 
-  <div class="section" id="pyspark">
-<h1>pyspark<a class="headerlink" href="#pyspark" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="spark">
+<h1>安装Spark<a class="headerlink" href="#spark" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>作为Python开发者，我们安装pyspark就可以了。</p>
+<p>作为Python开发者，我们只要安装pyspark就可以了。</p>
 </div>
-<div class="section" id="id1">
-<h2>安装pyspark<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pyspark">
+<h2>安装pyspark<a class="headerlink" href="#pyspark" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyspark</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="id1">
+<h2>验证安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h2>验证安装<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>在命令行输入pyspark</p>
+<h3>在命令行输入pyspark<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) facer@bogon ~ % pyspark
 Python 3.8.3 (default, Jul  2 2020, 11:26:31)
 [Clang 10.0.0 ] :: Anaconda, Inc. on darwin
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-21/09/22 20:55:31 WARN Utils: Your hostname, localhost resolves to a loopback address: 127.0.0.1; using 192.168.40.27 instead (on interface en0)
-21/09/22 20:55:31 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
-21/09/22 20:55:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark&#39;s default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to &quot;WARN&quot;.
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
@@ -323,35 +398,41 @@ Welcome to
 
 Using Python version 3.8.3 (default, Jul  2 2020 11:26:31)
 SparkSession available as &#39;spark&#39;.
-&gt;&gt;&gt; spark.version
-&#39;3.0.2&#39;
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
-<h2>第一个应用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>读取文件711.csv，看它一共有多少行</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;711.csv&quot;</span><span class="p">)</span>
+<h3>查看spark版本<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">spark</span><span class="o">.</span><span class="n">version</span>
+<span class="go">&#39;3.0.2&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="readme-md">
+<h3><a class="reference external" href="http://%E8%AF%BB%E5%8F%96README.md">读取README.md</a>，看它一共有多少行<a class="headerlink" href="#readme-md" title="Permalink to this headline">¶</a></h3>
+<p>“Hello, World” of distributed computing.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;README.md&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="go">+-------------------------------------------------+</span>
-<span class="go">|value                                            |</span>
-<span class="go">+-------------------------------------------------+</span>
-<span class="go">|,type,num                                        |</span>
-<span class="go">|0,711_num,2327667                                |</span>
-<span class="go">|1,null,0                                         |</span>
-<span class="go">|2,type_kon,0                                     |</span>
-<span class="go">|3,3,825514                                       |</span>
-<span class="go">|4,00000000394ff8d2ffffffffef05ac4a1631721599933,1|</span>
-<span class="go">|5,ffffffffe0eb728fffffffffef05ac4a1631721598585,1|</span>
-<span class="go">|6,ffffffffd939cd30ffffffffef05ac4a1631721597218,1|</span>
-<span class="go">|7,ffffffff8cdf04b1ffffffffef05ac4a1631721598461,1|</span>
-<span class="go">|8,ffffffffe5264d24ffffffffef05ac4a1631721597847,1|</span>
-<span class="go">+-------------------------------------------------+</span>
+<span class="go">+--------------------------------------------------------------------------------+</span>
+<span class="go">|value                                                                           |</span>
+<span class="go">+--------------------------------------------------------------------------------+</span>
+<span class="go">|# Apache Spark                                                                  |</span>
+<span class="go">|                                                                                |</span>
+<span class="go">|Spark is a unified analytics engine for large-scale data processing. It provides|</span>
+<span class="go">|high-level APIs in Scala, Java, Python, and R, and an optimized engine that     |</span>
+<span class="go">|supports general computation graphs for data analysis. It also supports a       |</span>
+<span class="go">|rich set of higher-level tools including Spark SQL for SQL and DataFrames,      |</span>
+<span class="go">|MLlib for machine learning, GraphX for graph processing,                        |</span>
+<span class="go">|and Structured Streaming for stream processing.                                 |</span>
+<span class="go">|                                                                                |</span>
+<span class="go">|&lt;https://spark.apache.org/&gt;                                                     |</span>
+<span class="go">+--------------------------------------------------------------------------------+</span>
 <span class="go">only showing top 10 rows</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="go">1487181</span>
+<span class="go">108</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -381,7 +462,8 @@ SparkSession available as &#39;spark&#39;.
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="a1.intro.html" title="previous page">Spark简介</a>
+    <a class='left-prev' id="prev-link" href="10.intro.html" title="previous page">Spark的特质</a>
+    <a class='right-next' id="next-link" href="chapter12/0.html" title="next page">Spark SQL</a>
 
         </div>
         

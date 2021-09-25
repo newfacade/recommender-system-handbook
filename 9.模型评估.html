@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Spark简介" href="a1.intro.html" />
+    <link rel="next" title="Spark的特质" href="10.intro.html" />
     <link rel="prev" title="模型服务" href="8.模型服务.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -118,19 +118,51 @@
    召回
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5.深度学习模型-基础.html">
-   深度学习模型-基础
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter05/0.html">
+   排序模型
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/1.movielens.html">
+     MovieLens数据集
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/2.mlp.html">
+     Embedding + MLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/3.wide and deep.html">
+     Wide and Deep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/6.din.html">
+     DIN
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6.深度学习模型-进阶.html">
-   深度学习模型-进阶
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
-   冷启动&amp;探索和利用
+  <a class="reference internal" href="7.冷启动.html">
+   冷启动
   </a>
  </li>
  <li class="toctree-l1">
@@ -151,14 +183,46 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="a1.intro.html">
-   Spark简介
+  <a class="reference internal" href="10.intro.html">
+   Spark的特质
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="a2.pyspark.html">
-   pyspark
+  <a class="reference internal" href="11.install.html">
+   安装Spark
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter12/0.html">
+   Spark SQL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/1.first app.html">
+     第一个应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/2.schema.html">
+     Schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/3.col and row.html">
+     DataFrame的列与行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/4.basic operations.html">
+     DataFrame基本操作
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -328,7 +392,7 @@
 <p>1.准确率</p>
 <div class="math notranslate nohighlight">
 \[Accuracy = \frac{n_{correct}}{n_{total}}\]</div>
-<p>常用语点击率预估等分类问题。</p>
+<p>常用于点击率预估等分类问题。</p>
 <p>2.精确率和召回率</p>
 <div class="math notranslate nohighlight">
 \[Precision = \frac{\#\left \{  Predict Positive\right \} \wedge \left \{  Real Positive\right \}}{\#\left \{  Predict Positive\right \}}\]</div>
@@ -340,7 +404,7 @@
 <p>3.交叉熵损失</p>
 <div class="math notranslate nohighlight">
 \[CrossEntropyLoss = -\frac{1}{N}\sum_{i=1}^{N}(y_{i}log{\hat{y}_{i}} + (1 - y_{i})log(1 - \hat{y}_{i}))\]</div>
-<p>4.均方误差</p>
+<p>4.均方根误差</p>
 <div class="math notranslate nohighlight">
 \[RMSE = \sqrt{\frac{\sum_{i=1}^{N}(y_{i} - \hat{y}_{i})^{2}}{N}}\]</div>
 <p>5.P-R曲线</p>
@@ -392,15 +456,19 @@
 <h2>召回评估指标<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="hit-ratio-hr">
 <h3>Hit Ratio(HR)<a class="headerlink" href="#hit-ratio-hr" title="Permalink to this headline">¶</a></h3>
-<p>公式为：</p>
+<p>Hit Ratio关心用户想要的，我们有没有推荐到：</p>
 <div class="math notranslate nohighlight">
-\[HR&#64;K = \frac{NumberofHit&#64;K}{|GT|}\]</div>
-<p>分母是所有的测试集合，分子表示每个用户top-K列表中属于测试集合的个数的总和。</p>
-<p>举个简单的例子，三个用户在测试集中的商品个数分别是10，12，8，模型得到的top-10推荐列表中，分别有6个，5个，4个在测试集中，那么此时HR的值是
-(6+5+4)/(10+12+8) = 0.5。</p>
+\[HR&#64;K = \frac{1}{N}\sum_{i=1}^{N}hits(i)\]</div>
+<p><span class="math notranslate nohighlight">\(N\)</span>: 总用户数.</p>
+<p><span class="math notranslate nohighlight">\(hits(i)\)</span>: 用户<span class="math notranslate nohighlight">\(i\)</span>的正访问是否在top-K的推荐列表中。</p>
 </div>
 <div class="section" id="ndcg-normalized-discounted-cummulative-gain">
 <h3>NDCG(Normalized Discounted Cummulative Gain)<a class="headerlink" href="#ndcg-normalized-discounted-cummulative-gain" title="Permalink to this headline">¶</a></h3>
+<p>NDCG还关心用户想要的，是否放在靠前的位置：</p>
+<div class="math notranslate nohighlight">
+\[NDCG&#64;K = \frac{1}{N}\sum_{i=1}^{N}\frac{1}{\log_{2}(p_{i} + 1)}\]</div>
+<p><span class="math notranslate nohighlight">\(p_{i}\)</span>: 用户i的正访问在top-K推荐列表中的位置，若不在则<span class="math notranslate nohighlight">\(p_{i}=\infty\)</span>.</p>
+<p>平均倒数排名(MRR)将NDCG中的<span class="math notranslate nohighlight">\(\log_{2}(p_{i} + 1)\)</span>换成了<span class="math notranslate nohighlight">\(p_{i}\)</span>，更强调顺序性。</p>
 </div>
 </div>
 </div>
@@ -431,7 +499,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="8.模型服务.html" title="previous page">模型服务</a>
-    <a class='right-next' id="next-link" href="a1.intro.html" title="next page">Spark简介</a>
+    <a class='right-next' id="next-link" href="10.intro.html" title="next page">Spark的特质</a>
 
         </div>
         

@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFrame基本操作 &#8212; 推荐系统手册</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="DataFrame的列与行" href="3.col and row.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/zhongli.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">推荐系统手册</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   前言
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  深度学习推荐系统
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1.基础架构.html">
+   基础架构
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2.经典推荐模型.html">
+   经典推荐模型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3.特征工程.html">
+   特征工程
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4.召回.html">
+   召回
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter05/0.html">
+   排序模型
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/1.movielens.html">
+     MovieLens数据集
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/2.mlp.html">
+     Embedding + MLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/3.wide and deep.html">
+     Wide and Deep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chapter05/6.din.html">
+     DIN
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7.冷启动.html">
+   冷启动
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8.模型服务.html">
+   模型服务
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../9.模型评估.html">
+   模型评估
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  spark
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10.intro.html">
+   Spark的特质
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11.install.html">
+   安装Spark
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="0.html">
+   Spark SQL
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.first app.html">
+     第一个应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.schema.html">
+     Schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.col and row.html">
+     DataFrame的列与行
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     DataFrame基本操作
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapter12/4.basic operations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter12/4.basic operations.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter12/4.basic operations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   读写
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projections-and-filters">
+   projections and filters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   重命名、添加和删除列
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   聚合
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   其他DataFrame操作
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dataframe">
+<h1>DataFrame基本操作<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本节介绍DataFrame的基本操作。<br/>
+包括读写、projection&amp;filter、列操作、聚合等。</p>
+</div>
+<div class="section" id="id1">
+<h2>读写<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Reading and writing are simple in Spark because of high-level abstractions and contributions from the community to connect to a wide variety of data sources.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+
+<span class="n">spark</span> <span class="o">=</span> <span class="p">(</span><span class="n">SparkSession</span>
+         <span class="o">.</span><span class="n">builder</span>
+         <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;BasicOperation&quot;</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">getOrCreate</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># 最好先定义好schema</span>
+<span class="c1"># Programmatic way to define a schema</span>
+<span class="n">fire_schema</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;CallNumber&#39;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;UnitID&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;IncidentNumber&#39;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;CallType&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;CallDate&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;WatchDate&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;CallFinalDisposition&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;AvailableDtTm&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Address&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;City&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Zipcode&#39;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Battalion&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;StationArea&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Box&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;OriginalPriority&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Priority&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;FinalPriority&#39;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;ALSUnit&#39;</span><span class="p">,</span> <span class="n">BooleanType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;CallTypeGroup&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;NumAlarms&#39;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;UnitType&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;UnitSequenceInCallDispatch&#39;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;FirePreventionDistrict&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;SupervisorDistrict&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;RowID&#39;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+                          <span class="n">StructField</span><span class="p">(</span><span class="s1">&#39;Delay&#39;</span><span class="p">,</span> <span class="n">FloatType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">)])</span>
+
+<span class="c1"># Use the DataFrameReader interface to read a CSV file</span>
+<span class="n">sf_fire_file</span> <span class="o">=</span> <span class="s2">&quot;../data/sf-fire-calls.csv&quot;</span>
+<span class="n">fire_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">sf_fire_file</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">fire_schema</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In Python to save as a Parquet file</span>
+<span class="n">parquet_path</span> <span class="o">=</span> <span class="s2">&quot;../data/sf_parquet&quot;</span>
+<span class="n">fire_df</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;parquet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">parquet_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="projections-and-filters">
+<h2>projections and filters<a class="headerlink" href="#projections-and-filters" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># 获取CallType不是Medical Incident的记录</span>
+<span class="n">few_fire_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">fire_df</span>
+               <span class="c1"># select是projection</span>
+               <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;IncidentNumber&quot;</span><span class="p">,</span> <span class="s2">&quot;AvailableDtTm&quot;</span><span class="p">,</span> <span class="s2">&quot;CallType&quot;</span><span class="p">)</span>
+               <span class="c1"># where、filter是filter</span>
+               <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;Medical Incident&quot;</span><span class="p">))</span>
+<span class="n">few_fire_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------------+----------------------+--------------+
+|IncidentNumber|AvailableDtTm         |CallType      |
++--------------+----------------------+--------------+
+|2003235       |01/11/2002 01:51:44 AM|Structure Fire|
+|2003250       |01/11/2002 04:16:46 AM|Vehicle Fire  |
+|2003259       |01/11/2002 06:01:58 AM|Alarms        |
+|2003279       |01/11/2002 08:03:26 AM|Structure Fire|
+|2003301       |01/11/2002 09:46:44 AM|Alarms        |
++--------------+----------------------+--------------+
+only showing top 5 rows
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用countDistinct()计算一共有多少种不同的CallType</span>
+<span class="p">(</span><span class="n">fire_df</span>
+ <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isNotNull</span><span class="p">())</span>
+ <span class="c1"># agg实际上是聚合操作</span>
+ <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;DistinctCallTypes&quot;</span><span class="p">))</span>
+ <span class="o">.</span><span class="n">show</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+
+|DistinctCallTypes|
++-----------------+
+|               30|
++-----------------+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出不同的CallType</span>
+<span class="p">(</span><span class="n">fire_df</span>
+ <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isNotNull</span><span class="p">())</span>
+ <span class="c1"># distinct去重</span>
+ <span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+ <span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------------------------+
+|CallType                           |
++-----------------------------------+
+|Elevator / Escalator Rescue        |
+|Marine Fire                        |
+|Aircraft Emergency                 |
+|Confined Space / Structure Collapse|
+|Administrative                     |
+|Alarms                             |
+|Odor (Strange / Unknown)           |
+|Citizen Assist / Service Call      |
+|HazMat                             |
+|Watercraft in Distress             |
++-----------------------------------+
+only showing top 10 rows
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>重命名、添加和删除列<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 重命名数据集</span>
+<span class="n">new_fire_df</span> <span class="o">=</span> <span class="n">fire_df</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s2">&quot;Delay&quot;</span><span class="p">,</span> <span class="s2">&quot;ResponseDelayedinMins&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 转化时间</span>
+<span class="n">fire_ts_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_fire_df</span>
+              <span class="c1"># `CallDate`列是`MM/dd/yyyy`格式</span>
+              <span class="c1"># 添加一个新列`IncidentDate`，它是timestamp格式</span>
+              <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;IncidentDate&quot;</span><span class="p">,</span> <span class="n">to_timestamp</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;CallDate&quot;</span><span class="p">),</span> <span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">))</span>
+              <span class="c1"># 删除`CallDate`列</span>
+              <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;CallDate&quot;</span><span class="p">)</span>
+              <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;OnWatchDate&quot;</span><span class="p">,</span> <span class="n">to_timestamp</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;WatchDate&quot;</span><span class="p">),</span> <span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">))</span>
+              <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;WatchDate&quot;</span><span class="p">)</span>
+              <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;AvailableDtTS&quot;</span><span class="p">,</span> <span class="n">to_timestamp</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;AvailableDtTm&quot;</span><span class="p">),</span> <span class="s2">&quot;MM/dd/yyyy hh:mm:ss a&quot;</span><span class="p">))</span>
+              <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;AvailableDtTm&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select the converted columns</span>
+<span class="p">(</span><span class="n">fire_ts_df</span>
+ <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;IncidentDate&quot;</span><span class="p">,</span> <span class="s2">&quot;OnWatchDate&quot;</span><span class="p">,</span> <span class="s2">&quot;AvailableDtTS&quot;</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-------------------+-------------------+-------------------+
+|IncidentDate       |OnWatchDate        |AvailableDtTS      |
++-------------------+-------------------+-------------------+
+|2002-01-11 00:00:00|2002-01-10 00:00:00|2002-01-11 01:51:44|
+|2002-01-11 00:00:00|2002-01-10 00:00:00|2002-01-11 03:01:18|
+|2002-01-11 00:00:00|2002-01-10 00:00:00|2002-01-11 02:39:50|
+|2002-01-11 00:00:00|2002-01-10 00:00:00|2002-01-11 04:16:46|
+|2002-01-11 00:00:00|2002-01-10 00:00:00|2002-01-11 06:01:58|
++-------------------+-------------------+-------------------+
+only showing top 5 rows
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取所有年份</span>
+<span class="p">(</span><span class="n">fire_ts_df</span>
+ <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">year</span><span class="p">(</span><span class="s1">&#39;IncidentDate&#39;</span><span class="p">))</span>
+ <span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+ <span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="n">year</span><span class="p">(</span><span class="s1">&#39;IncidentDate&#39;</span><span class="p">))</span>
+ <span class="o">.</span><span class="n">show</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+------------------+
+|year(IncidentDate)|
++------------------+
+|              2000|
+|              2001|
+|              2002|
+|              2003|
+|              2004|
+|              2005|
+|              2006|
+|              2007|
+|              2008|
+|              2009|
+|              2010|
+|              2011|
+|              2012|
+|              2013|
+|              2014|
+|              2015|
+|              2016|
+|              2017|
+|              2018|
++------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>聚合<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>A handful of transformations and actions on DataFrames, such as groupBy(), orderBy(), and count().</p>
+<p>Offer the ability to aggregate by column names and then aggregate counts across them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 统计数量最多的10种CallType</span>
+<span class="p">(</span><span class="n">fire_ts_df</span>
+ <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">isNotNull</span><span class="p">())</span>
+ <span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;CallType&quot;</span><span class="p">)</span>
+ <span class="c1"># 这里进行了聚合</span>
+ <span class="o">.</span><span class="n">count</span><span class="p">()</span>
+ <span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-------------------------------+------+
+|CallType                       |count |
++-------------------------------+------+
+|Medical Incident               |113794|
+|Structure Fire                 |23319 |
+|Alarms                         |19406 |
+|Traffic Collision              |7013  |
+|Citizen Assist / Service Call  |2524  |
+|Other                          |2166  |
+|Outside Fire                   |2094  |
+|Vehicle Fire                   |854   |
+|Gas Leak (Natural and LP Gases)|764   |
+|Water Rescue                   |755   |
++-------------------------------+------+
+only showing top 10 rows
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>其他DataFrame操作<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>The DataFrame API provides descriptive statistical methods like min(), max(), sum(), and avg().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyspark.sql.functions</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="c1"># 计算NumAlarms的总量，ResponseDelayedinMins的平均值</span>
+<span class="p">(</span><span class="n">fire_ts_df</span>
+ <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;NumAlarms&quot;</span><span class="p">),</span> <span class="n">F</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="s2">&quot;ResponseDelayedinMins&quot;</span><span class="p">))</span>
+ <span class="o">.</span><span class="n">show</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------------+--------------------------+
+|sum(NumAlarms)|avg(ResponseDelayedinMins)|
++--------------+--------------------------+
+|        176170|         3.892364154521585|
++--------------+--------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapter12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="3.col and row.html" title="previous page">DataFrame的列与行</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By newfacade<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

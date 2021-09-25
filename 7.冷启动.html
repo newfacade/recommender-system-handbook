@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search &#8212; 推荐系统手册</title>
+    <title>冷启动 &#8212; 推荐系统手册</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -33,7 +33,6 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -53,15 +52,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="模型服务" href="8.模型服务.html" />
+    <link rel="prev" title="DIN" href="chapter05/6.din.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -83,7 +80,7 @@
       <h1 class="site-logo" id="site-title">推荐系统手册</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="#" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -100,7 +97,7 @@
   深度学习推荐系统
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1.基础架构.html">
    基础架构
@@ -163,8 +160,8 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    冷启动
   </a>
  </li>
@@ -260,6 +257,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/7.冷启动.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -271,7 +285,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F7.冷启动.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -287,11 +301,51 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/7.冷启动.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   基于规则的冷启动
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   丰富冷启动过程中获得的用户和物品特征
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   探索和利用
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -300,33 +354,77 @@
         
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="id1">
+<h1>冷启动<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>冷启动是推荐系统必须面对的问题，任何推荐系统都要经历数据从无到有、从简单到丰富的过程。那么，在缺乏有价值数据的时候，如何进行有效的推荐被称为“冷启动问题”。</p>
+<p>具体地将，冷启动可分为三类：</p>
+<p>1.<strong>用户冷启动</strong></p>
+<p>2.<strong>物品冷启动</strong></p>
+<p>3.<strong>系统冷启动</strong></p>
+<p>解决冷启动问题需要比较专业的洞察，根据领域专家意见制定合理的冷启动策略，总的来说主流冷启动策略可分为以下几类：</p>
+<p>1.基于规则的冷启动</p>
+<p>2.丰富冷启动过程中获得的用户和物品特征</p>
+<p>3.“探索和利用机制”等</p>
+<div class="section" id="id2">
+<h2>基于规则的冷启动<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>在冷启动中由于数据缺乏，个性化推荐引擎无法有效工作，自然可以让系统回退到“前推荐系统”时代，采用基于规则的方法。</p>
+<p>例如，在用户冷启动场景下，可以使用“热门排行榜”，“最近流行趋势”，“最高评分”等榜单作为默认的推荐列表。事实上，大多数音乐、视频应用都是采用这类方法作为冷启动的默认规则。</p>
+<p>在物品冷启动场景下，可以根据一些规则找到物品的相似物品，利用相似物品的推荐逻辑完成物品的冷启动过程，以Airbnb为例进行说明。</p>
+<p>Airbnb在新上线短租房时，会根据该房屋的属性对短租房指定一个“聚类”，位于同样“聚类”中的房屋有相似的推荐规则，“聚类”所依靠的规则有如下三条：</p>
+<ol class="simple">
+<li><p>同样的价格范围</p></li>
+<li><p>相似的房屋属性（面积、房间数等）</p></li>
+<li><p>距目标房源的距离在10公里内</p></li>
+</ol>
+<p>通过Airbnb的例子可以知道，基于规则的冷启动方法更多依赖的是领域专家对业务的洞察。在制定冷启动规则时，需充分了解公司的业务特点，充分利用已有数据，才能让冷启动规则合理且高效。</p>
+</div>
+<div class="section" id="id3">
+<h2>丰富冷启动过程中获得的用户和物品特征<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>在历史数据特征缺失的情况下，推荐系统仍然可以凭借用户和物品的属性特征完成较粗粒度的推荐。这类属性特征包括以下几类：</p>
+<p>1.用户的注册信息</p>
+<p>2.第三方DMP（Data Management Platform,数据管理平台）提供的用户信息</p>
+<p>3.物品的内容特征</p>
+<p>4.引导用户输入的冷启动特征</p>
+</div>
+<div class="section" id="id4">
+<h2>探索和利用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>探索和利用是在“探索新数据”和“利用旧数据”之间进行平衡，使系统既能利用旧数据（捞鱼），又能高效地探索冷启动物品是否是优质物品（放鱼苗）。</p>
+<p>这里以最经典的探索与利用方法UCB（Upper Confidence Bound，置信区间上界）为例说明探索与利用的原理。</p>
+<p>使用UCB方法计算每个物品的得分的公式如下：</p>
+<div class="math notranslate nohighlight">
+\[UCB(j) = \overline{x_{j}} + \sqrt{\frac{2ln\ n}{n_{j}}}\]</div>
+<p>其中<span class="math notranslate nohighlight">\(x_{j}\)</span>为观测到的第j个物品的平均回报（这里平均回报可以是点击率、转化率、播放率等），<span class="math notranslate nohighlight">\(n_{j}\)</span>目前为止向用户曝光第<span class="math notranslate nohighlight">\(j\)</span>个物品的次数，<span class="math notranslate nohighlight">\(n\)</span>为到目前为止曝光所有物品的次数之和。</p>
+<p>通过简单的计算可知，当物品的平均回报高时，UCB的得分会高；同时，当物品的曝光次数低时，UCB的得分也会高。也就是说，使用UCB方法进行推荐，推荐系统会倾向于推荐“效果好”或者“冷启动”的物品。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="chapter05/6.din.html" title="previous page">DIN</a>
+    <a class='right-next' id="next-link" href="8.模型服务.html" title="next page">模型服务</a>
 
         </div>
         

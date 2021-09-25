@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="模型评估" href="9.模型评估.html" />
-    <link rel="prev" title="冷启动&amp;探索和利用" href="7.冷启动&amp;探索和利用.html" />
+    <link rel="prev" title="冷启动" href="7.冷启动.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -118,19 +118,51 @@
    召回
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5.深度学习模型-基础.html">
-   深度学习模型-基础
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter05/0.html">
+   排序模型
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/1.movielens.html">
+     MovieLens数据集
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/2.mlp.html">
+     Embedding + MLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/3.wide and deep.html">
+     Wide and Deep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/6.din.html">
+     DIN
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6.深度学习模型-进阶.html">
-   深度学习模型-进阶
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
-   冷启动&amp;探索和利用
+  <a class="reference internal" href="7.冷启动.html">
+   冷启动
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -151,14 +183,46 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="a1.intro.html">
-   Spark简介
+  <a class="reference internal" href="10.intro.html">
+   Spark的特质
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="a2.pyspark.html">
-   pyspark
+  <a class="reference internal" href="11.install.html">
+   安装Spark
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter12/0.html">
+   Spark SQL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/1.first app.html">
+     第一个应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/2.schema.html">
+     Schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/3.col and row.html">
+     DataFrame的列与行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/4.basic operations.html">
+     DataFrame基本操作
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -435,7 +499,7 @@
 <p>这个过程就是线上特征处理，它可能包括一些连续特征的归一化，分桶等，也包括请求数据库已存储的信息。</p>
 <p>具体来说，特征分为静态特征和动态特征。</p>
 <p>1.对于静态特征，比如说 id2embedding 的数据，基本长时间不会变更，这块直接从特征池（比如说Redis）里取。</p>
-<p>2.对于动态特征，我们需要再推荐服务器内部做一些必要的预处理，最后拼接起来，生成模型可接收的输入。</p>
+<p>2.对于动态特征，我们需要在推荐服务器内部做一些必要的预处理，最后拼接起来，生成模型可接收的输入。</p>
 <p>这样把部分特征处理放到推荐服务器内而非模型里，可以减轻Tensorflow Serving的负担，降低延迟。</p>
 </div>
 </div>
@@ -465,7 +529,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="7.冷启动&amp;探索和利用.html" title="previous page">冷启动&amp;探索和利用</a>
+    <a class='left-prev' id="prev-link" href="7.冷启动.html" title="previous page">冷启动</a>
     <a class='right-next' id="next-link" href="9.模型评估.html" title="next page">模型评估</a>
 
         </div>

@@ -118,19 +118,51 @@
    召回
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5.深度学习模型-基础.html">
-   深度学习模型-基础
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter05/0.html">
+   排序模型
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/1.movielens.html">
+     MovieLens数据集
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/2.mlp.html">
+     Embedding + MLP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/3.wide and deep.html">
+     Wide and Deep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter05/6.din.html">
+     DIN
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6.深度学习模型-进阶.html">
-   深度学习模型-进阶
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动&amp;探索和利用.html">
-   冷启动&amp;探索和利用
+  <a class="reference internal" href="7.冷启动.html">
+   冷启动
   </a>
  </li>
  <li class="toctree-l1">
@@ -151,14 +183,46 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="a1.intro.html">
-   Spark简介
+  <a class="reference internal" href="10.intro.html">
+   Spark的特质
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="a2.pyspark.html">
-   pyspark
+  <a class="reference internal" href="11.install.html">
+   安装Spark
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="chapter12/0.html">
+   Spark SQL
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/1.first app.html">
+     第一个应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/2.schema.html">
+     Schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/3.col and row.html">
+     DataFrame的列与行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="chapter12/4.basic operations.html">
+     DataFrame基本操作
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -327,8 +391,9 @@
 <div class="section" id="id4">
 <h3>推荐系统的数据部分<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>推荐系统的“数据部分”负责“用户”“物品”“场景”信息的收集和处理。</p>
-<p>根据处理数据量和实时性不同，可分为客户端和服务端实时数据处理、流平台（Flink等，非必须）准实时数据处理、大数据平台（Spark等）离线数据处理。</p>
-<p>数据平台根据对日志，物品和用户元数据等信息的处理，获得推荐模型的训练数据、特征数据、统计数据。即数据平台加工后的数据出口主要有3个：</p>
+<p>根据处理数据量和实时性不同，可分为客户端和服务端实时数据处理、流平台（Flink等）准实时数据处理、大数据平台（Spark等）离线数据处理。</p>
+<p>数据平台根据对日志，物品和用户元数据等信息的处理，获得推荐模型的训练数据、特征数据、统计数据。</p>
+<p>数据平台加工后的数据出口主要有3个：</p>
 <ol class="simple">
 <li><p>生成推荐系统模型所需的样本数据，用于模型的训练和评估。</p></li>
 <li><p>生成推荐系统模型服务（Model Serving）所需的特征，用于线上推断。</p></li>
@@ -343,7 +408,7 @@
 <p>补充策略和算法层：为兼顾结果的多样性、流行度、新鲜度等指标，对推荐列表进行一定的调整。</p>
 <p>他们都是通过模型线上Serving来实现的（如Tensorflow serving）。</p>
 <p>而模型要serving，首先需要训练好模型，才能将其部署到线上。</p>
-<p>模型训练可分为离线训练和在线更新（非必须）两部分。离线训练利用全量样本和特征，使模型逼近全局最优解；在线更新可以更实时的消化新数据，满足模型实时性的要求。</p>
+<p>模型训练可分为离线训练和在线更新两部分。离线训练利用全量样本和特征，使模型逼近全局最优解；在线更新可以更实时的消化新数据，满足模型实时性的要求。</p>
 <p>最后，为了评估推荐系统模型的效果，以及模型的快速迭代优化，推荐系统还需要“离线评估”“线上A/B测试”等评估模块，用来得到线下和线上评估指标，指导下一步的模型迭代优化。</p>
 </div>
 <div class="section" id="id6">
