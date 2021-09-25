@@ -349,8 +349,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#readme-md">
-     读取README.md，看它一共有多少行
+    <a class="reference internal nav-link" href="#id4">
+     读取一个文件，看它一共有多少行
     </a>
    </li>
   </ul>
@@ -408,8 +408,8 @@ SparkSession available as &#39;spark&#39;.
 </pre></div>
 </div>
 </div>
-<div class="section" id="readme-md">
-<h3><a class="reference external" href="http://%E8%AF%BB%E5%8F%96README.md">读取README.md</a>，看它一共有多少行<a class="headerlink" href="#readme-md" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>读取一个文件，看它一共有多少行<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>“Hello, World” of distributed computing.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;README.md&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
