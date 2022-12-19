@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>特征工程 &#8212; 推荐系统手册</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,49 +19,63 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/github.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="召回" href="4.召回.html" />
-    <link rel="prev" title="经典推荐模型" href="2.经典推荐模型.html" />
+    <link rel="next" title="召回" href="recall/0.html" />
+    <link rel="prev" title="经典推荐模型" href="2.%E7%BB%8F%E5%85%B8%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9E%8B.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,12 +84,17 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/zhongli.jpg" class="logo" alt="logo">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/di.webp" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">推荐系统手册</h1>
@@ -83,28 +103,24 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   前言
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  深度学习推荐系统
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1.基础架构.html">
+  <a class="reference internal" href="1.%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84.html">
    基础架构
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2.经典推荐模型.html">
+  <a class="reference internal" href="2.%E7%BB%8F%E5%85%B8%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9E%8B.html">
    经典推荐模型
   </a>
  </li>
@@ -113,14 +129,9 @@
    特征工程
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4.召回.html">
-   召回
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter05/0.html">
-   排序模型
+  <a class="reference internal" href="recall/0.html">
+   召回
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -129,72 +140,35 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter05/1.movielens.html">
-     MovieLens数据集
+    <a class="reference internal" href="recall/1.basic.html">
+     召回
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter05/2.mlp.html">
-     Embedding + MLP
+    <a class="reference internal" href="recall/2.structure.html">
+     召回框架
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter05/3.wide and deep.html">
-     Wide and Deep
+    <a class="reference internal" href="recall/3.youtube.html">
+     Youtube 召回算法
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter05/4.neuralcf.html">
-     NeuralCF
+    <a class="reference internal" href="recall/4.airbnb.html">
+     Airbnb 召回算法
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter05/5.deepfm.html">
-     DeepFM
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="chapter05/6.din.html">
-     DIN
+    <a class="reference internal" href="recall/5.facebook.html">
+     Facebook 的 EBR 算法
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.冷启动.html">
-   冷启动
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8.模型服务.html">
-   模型服务
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="9.模型评估.html">
-   模型评估
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  spark
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="10.intro.html">
-   Spark的特质
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11.install.html">
-   安装Spark
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="chapter12/0.html">
-   Spark SQL
+  <a class="reference internal" href="rank/0.html">
+   排序模型
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -203,131 +177,258 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter12/1.first app.html">
-     第一个应用
+    <a class="reference internal" href="rank/1.movielens.html">
+     MovieLens数据集
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter12/2.schema.html">
-     Schema
+    <a class="reference internal" href="rank/2.mlp.html">
+     Embedding + MLP
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter12/3.col and row.html">
-     DataFrame的列与行
+    <a class="reference internal" href="rank/3.wide%20and%20deep.html">
+     Wide and Deep
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="chapter12/4.basic operations.html">
-     DataFrame基本操作
+    <a class="reference internal" href="rank/4.neuralcf.html">
+     NeuralCF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rank/5.deepfm.html">
+     DeepFM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rank/6.din.html">
+     DIN
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7.%E5%86%B7%E5%90%AF%E5%8A%A8.html">
+   冷启动
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8.%E6%A8%A1%E5%9E%8B%E6%9C%8D%E5%8A%A1.html">
+   模型服务
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9.%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.html">
+   模型评估
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/3.特征工程.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3.特征工程.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/3.特征工程.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/newfacade/recommender-system-handbook/master?urlpath=tree/3.特征工程.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/newfacade/recommender-system-handbook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/newfacade/recommender-system-handbook/issues/new?title=Issue%20on%20page%20%2F3.特征工程.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/3.特征工程.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    特征工程简介
@@ -398,31 +499,116 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>特征工程</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   特征工程简介
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     构建推荐系统特征工程的原则
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     推荐系统中的常用特征
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spark">
+   使用spark处理特征
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-hot">
+     使用one-hot编码处理类别型特征
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     使用归一化和分桶处理数值型特征
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#embedding">
+   Embedding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     矩阵分解
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#word2vec">
+     Word2vec
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graph-embedding">
+   Graph Embedding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-walk">
+     基于随机游走的deep-walk
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node2vec">
+     同质性和结构性的权衡，Node2vec
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="id1">
-<h1>特征工程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>特征工程<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <div class="section" id="id2">
-<h2>特征工程简介<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>特征工程简介<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>我们已经知道，推荐系统就是利用“用户信息”“物品信息”“场景信息”这三大部分有价值数据，通过构建推荐模型得出推荐列表的工程系统。</p>
 <p>在这个系统之中，特征工程就是利用工程手段从“用户信息”“物品信息”“场景信息”中提取特征的过程。</p>
 <p><img alt="jupyter" src="_images/pre.jpeg" /></p>
 <div class="section" id="id3">
-<h3>构建推荐系统特征工程的原则<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[\mbox{原始数据}\stackrel{\mbox{特征工程}}{\longrightarrow}\mbox{特征}\]</div>
+<h3>构建推荐系统特征工程的原则<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>$$\mbox{原始数据}\stackrel{\mbox{特征工程}}{\longrightarrow}\mbox{特征}$$</p>
 <p>特征工程往往会造成信息损失，而且我们也不可能对所有原始数据都做特征工程，那么有什么原则可以指导我们构建特征工程呢？</p>
 <p>推荐系统特征工程的原则：尽可能地让特征工程抽取出的一组特征，能保留推荐环境及用户行为过程中所有的”有用“信息，并且尽量摒弃冗余信息。</p>
 </div>
 <div class="section" id="id4">
-<h3>推荐系统中的常用特征<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>推荐系统中的常用特征<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>其一是用户行为数据，它是推荐系统最常用，也是最关键的数据。</p>
 <p>用户潜在的兴趣、用户对物品的评价都包含在用户的行为历史中。用户行为又可分为显性和隐形，如下图：</p>
 <p><img alt="jupyter" src="_images/pre2.jpeg" /></p>
@@ -436,7 +622,7 @@
 </div>
 </div>
 <div class="section" id="spark">
-<h2>使用spark处理特征<a class="headerlink" href="#spark" title="Permalink to this headline">¶</a></h2>
+<h2>使用spark处理特征<a class="headerlink" href="#spark" title="Permalink to this headline">#</a></h2>
 <p>spark是一个分布式计算平台。所谓分布式，指的是计算节点之间不共享内存，需要通过网络通信的方式交换数据。spark计算集群能够比单机高性能服务器具备更强大的计算能力，是由这些成百上千的工作节点并行工作带来的。</p>
 <p>spark程序由manager node（管理节点）进行调度组织，由worker node（工作节点）具体计算，最终结果返回driver program（驱动程序）上。在物理的worker node上，数据还会分为不同的partition（数据分片），它是spark的基础数据单元。</p>
 <p><img alt="jupyter" src="_images/spark1.jpeg" /></p>
@@ -449,7 +635,7 @@
 <p><img alt="jupyter" src="_images/spark3.jpeg" /></p>
 <p>注：若是单机处理数据，可以用pandas替代spark</p>
 <div class="section" id="one-hot">
-<h3>使用one-hot编码处理类别型特征<a class="headerlink" href="#one-hot" title="Permalink to this headline">¶</a></h3>
+<h3>使用one-hot编码处理类别型特征<a class="headerlink" href="#one-hot" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
@@ -519,7 +705,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h3>使用归一化和分桶处理数值型特征<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>使用归一化和分桶处理数值型特征<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
@@ -552,13 +738,13 @@
 </div>
 </div>
 <div class="section" id="embedding">
-<h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">¶</a></h2>
+<h2>Embedding<a class="headerlink" href="#embedding" title="Permalink to this headline">#</a></h2>
 <p>简单来说，Embedding就是用一个数值向量表示一个对象（Object）的方法。</p>
 <p>这里对象可以是一个词，一个商品也可以是一部电影。</p>
 <p>“表示”可以解释为：一个物品能被向量“表示”，是因为这个向量和其他物品向量之间的距离反映了这些物品的相似性。</p>
 <p>还是太抽象了，举两个例子来进行解释。</p>
 <div class="section" id="id6">
-<h3>矩阵分解<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>矩阵分解<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>第一个例子是矩阵分解算法，用户id（如果是大平台的话数量是上亿）和物品id被表示为了用户向量（比如说100维）和物品向量，且Embedding向量保存着他们的相似性关系：</p>
 <p><img alt="jupyter" src="_images/embed-matrix.jpeg" /></p>
 <p>Embedding的作用：</p>
@@ -566,37 +752,35 @@
 <p>2.Embedding可以融合大量的有价值信息，是极其重要的特征向量</p>
 </div>
 <div class="section" id="word2vec">
-<h3>Word2vec<a class="headerlink" href="#word2vec" title="Permalink to this headline">¶</a></h3>
+<h3>Word2vec<a class="headerlink" href="#word2vec" title="Permalink to this headline">#</a></h3>
 <p>Word2vec可以将英文中的各个单词（数量是几十万）表示为较低维向量（比如说300维），若使用one-hot向量表示单词，则需要几十万维。</p>
 <p>而且这些词Embedding向量可以揭示单词之间的关系，比如说近义词的向量比较相似，比如说可以揭示词之间的性别信息、时态信息：</p>
 <p><img alt="jupyter" src="_images/word2vec1.jpeg" /></p>
 <p>上图即：</p>
-<div class="math notranslate nohighlight">
-\[Embedding(woman) - Embedding(man) \approx Embedding(queen) - Embedding(king)\]</div>
+<p>$$Embedding(woman) - Embedding(man) \approx Embedding(queen) - Embedding(king)$$</p>
 <p>和：</p>
-<div class="math notranslate nohighlight">
-\[Embedding(walked) - Embedding(walking) \approx Embedding(swan) - Embedding(swimming)\]</div>
-<p>要训练word2vec模型，需要准备一组句子组成的语料库，假设其中一个长度为<span class="math notranslate nohighlight">\(T\)</span>的句子包含的词为<span class="math notranslate nohighlight">\(w_{1},w_{2},...,w_{T}\)</span>，并且我们假定每个词和它的相邻词关系最密切。</p>
+<p>$$Embedding(walked) - Embedding(walking) \approx Embedding(swan) - Embedding(swimming)$$</p>
+<p>要训练word2vec模型，需要准备一组句子组成的语料库，假设其中一个长度为$T$的句子包含的词为$w_{1},w_{2},…,w_{T}$，并且我们假定每个词和它的相邻词关系最密切。</p>
 <p>word2vec模型分两种：</p>
 <p>1、CBOW由相邻的几个词预测中间的词。</p>
 <p>2、Skip-gram由中间的词预测相邻的词。</p>
 <p><img alt="jupyter" src="_images/word2vec2.jpeg" /></p>
 <p>以skip-gram为例进行说明。</p>
-<p>word2vec的模型是一个两层神经网络，输入层和输出层的维度为单词数<span class="math notranslate nohighlight">\(V\)</span>（一般为数万），隐藏层的维度为我们所期望的Embedding向量维度<span class="math notranslate nohighlight">\(N\)</span>（一般为数百）。</p>
+<p>word2vec的模型是一个两层神经网络，输入层和输出层的维度为单词数$V$（一般为数万），隐藏层的维度为我们所期望的Embedding向量维度$N$（一般为数百）。</p>
 <p>输入是one-hot向量，输出是multi-hot向量（如果window_size=2就是4-hot向量）。</p>
 <p><img alt="jupyter" src="_images/word2vec3.jpeg" /></p>
 <p>最后训练出的输入-隐藏层参数就是我们需要的Embedding向量。</p>
-<p>它是一个<span class="math notranslate nohighlight">\(V\times{N}\)</span>的矩阵，矩阵第 <span class="math notranslate nohighlight">\(i\)</span> 行向量是第 <span class="math notranslate nohighlight">\(i\)</span> 个单词为输入时的隐藏层向量，他拥有第 <span class="math notranslate nohighlight">\(i\)</span> 个单词周围单词分布的信息，因此他就是第 <span class="math notranslate nohighlight">\(i\)</span> 个单词的Embedding。</p>
+<p>它是一个$V\times{N}$的矩阵，矩阵第 $i$ 行向量是第 $i$ 个单词为输入时的隐藏层向量，他拥有第 $i$ 个单词周围单词分布的信息，因此他就是第 $i$ 个单词的Embedding。</p>
 <p><img alt="jupyter" src="_images/word2vec4.jpeg" /></p>
 </div>
 </div>
 <div class="section" id="graph-embedding">
-<h2>Graph Embedding<a class="headerlink" href="#graph-embedding" title="Permalink to this headline">¶</a></h2>
+<h2>Graph Embedding<a class="headerlink" href="#graph-embedding" title="Permalink to this headline">#</a></h2>
 <p>互联网的数据不仅仅有序列数据（可用word2vec的推广item2vec处理），越来越多的数据被我们以图的形式展现出来：</p>
 <p><img alt="jupyter" src="_images/graph1.jpeg" /></p>
 <p>这时候，我们需要专门的方法来将图中的节点embedding化。</p>
 <div class="section" id="deep-walk">
-<h3>基于随机游走的deep-walk<a class="headerlink" href="#deep-walk" title="Permalink to this headline">¶</a></h3>
+<h3>基于随机游走的deep-walk<a class="headerlink" href="#deep-walk" title="Permalink to this headline">#</a></h3>
 <p>deep-walk的执行过程如下图所示：</p>
 <p><img alt="jupyter" src="_images/graph2.jpeg" /></p>
 <p>a.得到原始的用户行为序列</p>
@@ -605,39 +789,36 @@
 <p>d.使用word2vec训练序列数据，得到节点的embedding。</p>
 </div>
 <div class="section" id="node2vec">
-<h3>同质性和结构性的权衡，Node2vec<a class="headerlink" href="#node2vec" title="Permalink to this headline">¶</a></h3>
+<h3>同质性和结构性的权衡，Node2vec<a class="headerlink" href="#node2vec" title="Permalink to this headline">#</a></h3>
 <p>node2vec在deep-walk的基础上，让我们可以在网络的同质性(Homophily)和结构性(Structural Equivalence)中进行权衡。</p>
 <p>同质性：距离相近的节点的Embedding应该尽量相似。</p>
 <p>结构性：结构上相似的节点的Emebdding应该尽量相似。</p>
 <p><img alt="jupyter" src="_images/graph3.jpeg" /></p>
-<p>上面 <span class="math notranslate nohighlight">\(u\)</span> 和 <span class="math notranslate nohighlight">\(s_{6}\)</span> 都是各区域中的中心节点，按照结构性来说，它们的embedding应该相似。</p>
+<p>上面 $u$ 和 $s_{6}$ 都是各区域中的中心节点，按照结构性来说，它们的embedding应该相似。</p>
 <p>为了使graph embedding更倾向于表达同质性，随机游走要倾向于DFS（深度优先搜索），使得随机游走能更可能跳到远方节点。</p>
 <p>反之，为了表达结构性，随机游走要倾向于BFS（广度优先搜索），使得随机游走更多在当前邻域游走，捕捉局部结构信息。</p>
 <p>node2vec通过控制节点间的跳转概率来控制倾向性。</p>
-<p>下图中 <span class="math notranslate nohighlight">\(v\)</span> 为当前节点，<span class="math notranslate nohighlight">\(t\)</span> 为前一个节点，现在要确定 <span class="math notranslate nohighlight">\(v\)</span> 跳转至其他节点的概率。</p>
+<p>下图中 $v$ 为当前节点，$t$ 为前一个节点，现在要确定 $v$ 跳转至其他节点的概率。</p>
 <p><img alt="jupyter" src="_images/graph4.jpeg" /></p>
-<p>设 <span class="math notranslate nohighlight">\(w_{vx}\)</span> 是边的原始权重，它即原始的用户行为序列中这条边出现的次数。</p>
-<p>对于deep-walk，跳转概率正比于 <span class="math notranslate nohighlight">\(w_{vx}\)</span>。</p>
+<p>设 $w_{vx}$ 是边的原始权重，它即原始的用户行为序列中这条边出现的次数。</p>
+<p>对于deep-walk，跳转概率正比于 $w_{vx}$。</p>
 <p>而node2vec在原始权重的基础上，还会分三种情况考虑</p>
-<p>1.<span class="math notranslate nohighlight">\(x\)</span> 即前一个节点 <span class="math notranslate nohighlight">\(t\)</span>，原始权重需乘以 <span class="math notranslate nohighlight">\(\frac{1}{p}\)</span>， <span class="math notranslate nohighlight">\(p\)</span> 是超参数</p>
-<p>2.<span class="math notranslate nohighlight">\(x\)</span> 和前一个节点 <span class="math notranslate nohighlight">\(t\)</span> 相连</p>
-<p>3.<span class="math notranslate nohighlight">\(x\)</span> 不和前一个节点 <span class="math notranslate nohighlight">\(t\)</span> 相连，原始权重需乘以 <span class="math notranslate nohighlight">\(\frac{1}{q}\)</span>， <span class="math notranslate nohighlight">\(q\)</span>是超参数</p>
+<p>1.$x$ 即前一个节点 $t$，原始权重需乘以 $\frac{1}{p}$， $p$ 是超参数</p>
+<p>2.$x$ 和前一个节点 $t$ 相连</p>
+<p>3.$x$ 不和前一个节点 $t$ 相连，原始权重需乘以 $\frac{1}{q}$， $q$是超参数</p>
 <p>即：</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \alpha_{pq}(t,x) = 
-  \begin{cases}
-    \frac{1}{p}, &amp;\text{if $d_{tx}=0$}\\
-    1, &amp;\text{if $d_{tx}=1$}\\
-    \frac{1}{q}, &amp;\text{if $d_{tx}=2$}\\
-  \end{cases}
-\end{split}\]</div>
-<p>我们设定的 <span class="math notranslate nohighlight">\(q\)</span> 越小<span class="math notranslate nohighlight">\(\Rightarrow\)</span>随机游走至远方的可能性越大<span class="math notranslate nohighlight">\(\Rightarrow\)</span>更倾向于DFS<span class="math notranslate nohighlight">\(\Rightarrow\)</span>倾向于表达同质性</p>
-<div class="math notranslate nohighlight">
-\[q &lt; 1 &lt; p\]</div>
-<p>我们设定的 <span class="math notranslate nohighlight">\(p\)</span> 越小<span class="math notranslate nohighlight">\(\Rightarrow\)</span>随机游走返回 <span class="math notranslate nohighlight">\(t\)</span> 的可能性越大<span class="math notranslate nohighlight">\(\Rightarrow\)</span>更倾向于BFS<span class="math notranslate nohighlight">\(\Rightarrow\)</span>倾向于表达结构性</p>
-<div class="math notranslate nohighlight">
-\[p &lt; 1 &lt; q\]</div>
+<p>$$
+\alpha_{pq}(t,x) =
+\begin{cases}
+\frac{1}{p}, &amp;\text{if $d_{tx}=0$}\
+1, &amp;\text{if $d_{tx}=1$}\
+\frac{1}{q}, &amp;\text{if $d_{tx}=2$}\
+\end{cases}
+$$</p>
+<p>我们设定的 $q$ 越小$\Rightarrow$随机游走至远方的可能性越大$\Rightarrow$更倾向于DFS$\Rightarrow$倾向于表达同质性</p>
+<p>$$q &lt; 1 &lt; p$$</p>
+<p>我们设定的 $p$ 越小$\Rightarrow$随机游走返回 $t$ 的可能性越大$\Rightarrow$更倾向于BFS$\Rightarrow$倾向于表达结构性</p>
+<p>$$p &lt; 1 &lt; q$$</p>
 </div>
 </div>
 </div>
@@ -664,34 +845,48 @@
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="2.经典推荐模型.html" title="previous page">经典推荐模型</a>
-    <a class='right-next' id="next-link" href="4.召回.html" title="next page">召回</a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2.%E7%BB%8F%E5%85%B8%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9E%8B.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">经典推荐模型</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="recall/0.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">召回</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By newfacade<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By newfacade<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
